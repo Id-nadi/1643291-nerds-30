@@ -1,7 +1,7 @@
 # Личный проект «Нёрдс»
 
 * Студент: [Nadezhda Polyanskaya](https://up.htmlacademy.ru/htmlcss/30/user/1643291).
-* Наставник: `Неизвестно`.
+* Наставник: '[Ольга Ветер](https://htmlacademy.ru/profile/id73199)'.
 
 ---
 
