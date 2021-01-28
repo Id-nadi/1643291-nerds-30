@@ -3,46 +3,54 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Нёрдс</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="img/Vector.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="img/Vector.png">
+    <link rel="manifest" href="manifest.webmanifest">
   </head>
   <body>
 <header>
   <nav>
-  <a href="index.html"><img src="img.README" alt="логотип компании"></a>
+  <a href="index.html"><img src="img/nerds-logo.svg" width='
+    159,87' height='65,02' alt="логотип Nerds"></a> <!--Тут странная ширина-высота в десятичных дробях. Это я так скопировала с Фигмы, такие значения. Валидатор выдет еррор, не совсем понимаю что с этим делать: забить на сотни у дизайнера и вставить целое значение? Взять в &; знак запятой?-->
     <ul>
-      <li><a href="img/blank.html">Студия</a></li>
-      <li><a href="img/blank.html">Клиенты</a></li>
+      <li><a href="#">Студия</a></li>
+      <li><a href="#">Клиенты</a></li>
       <li><a href="catalog.html">Магазин</a></li>
       <li><a href="#contacts">Контакты</a></li> 
-      <li><a href="img/blank.html">Корзина</a></li>
+      <li>
+        <img src="img/Shape.png" width="15" height="11" alt="Корзина"> <!--Нужно ее сейчас делать или нет? Там два колесика отдельно идут...в общем я иконку подключила, если что и колесики вставлю-->
+        <a href="#">Корзина</a></li>
     </ul>
   </nav>
 </header>
 <main>
-  <h1>Дизайн-студия &#34;Nerds&#34;</h1> <!--В демке говорят х1 нужен, но мы его потом скроем-->
+  <h1>Дизайн-студия &#34;Nerds&#34;</h1>
   <section>
-    <p>Долго,дорого, скурпулезно.</p> <!--Здесь и в др параграфах возможно подадобится <br>-->
+    <img src="img/index.img/nerds-index-slide1 1.png" width='750' height='431' alt="Телефоны"> <!--Вот здесь валидатору не понравился пробел, но я тоже ведь экспортировала из фигмы, не сама название придумывала..Вот что выдал: Error: Bad value img/index.img/nerds-index-slide1 1.png for attribute src on element img: Illegal character in path segment: space is not allowed.-->
+    <p>Долго,дорого, скурпулезно.</p> 
     <p>Математически выверенный дизайн для вашего сайта или приложения.</p>
      <button type="button" name="button">Узнать больше</button>
-    <input type="radio" name="image1" value="phones" checked> <!--А это будет слайдер-->
+    <input type="radio" name="image1" value="phones" checked> <!--Вот здесь не поняла. Там предполагается слайдер, но картинок нет коме телефонов. Что мне тогда писать в нэйм и вэлью...?-->
     <input type="radio" name="image2" value="поканезнаю">
     <input type="radio" name="image3" value="поканезнаю1">
   </section>
   <section>
     <ul>
       <li>
-        <img src="img/blank.html" alt="картинка Монитор">
-        <h2>веб-сайты</h2> <!--Здесь и далее пишу строчными, наверное тут CSS надо будет применять чтобы в верхнем регистре все буквы были, чтобы не через капслок это делать-->
+        <img src="img/index.img/illustration-1 1.png" width='300' height='146' alt="картинка Монитор"> <!--Тоже валидатор выдал ошибку с пробелом-->
+        <h2>веб-сайты</h2> 
         <p>Мир никогда не будет прежним после того как увидит ваш сайт!</p>
         <button type="button" name="button">Заказать</button>
       </li>
       <li>
-      <img src="img/blank.html" alt="картинка Айфон">
+      <img src="img/index.img/illustration-2 1.png" width='300' height='146' alt="картинка Айфон"> <!--Тоже валидатор выдал ошибку с пробелом-->
       <h2>приложения</h2>
       <p>Покорите топ-10 приложений в AppStore и Google Play</p>
       <button type="button" name="button">Заказать</button>
     </li>
     <li>
-    <img src="img/blank.html" alt="картинка Презентация">
+    <img src="img/index.img/illustration-3 1.png" width='300' height='146' alt="картинка Презентация"> <!--Тоже валидатор выдал ошибку с пробелом-->
     <h2>презентации</h2>
     <p>Вы даже не подозреваете, насколько вы изумительны!</p>
     <button type="button" name="button">Заказать</button>
@@ -60,25 +68,23 @@
   </ul>
 </section>
 <section>
-  <img src="img/blank.html" alt="logo">
-  <img src="img/blank.html" alt="background-image">
-  <table>
-    <caption>С 2004 года любим точность во всем:</caption>
-    <tr>
-      <td>146%</td>
-      <td>100%</td>
-      <td>50%</td>
-    </tr>
-    <tr>
-      <td>Уровень самоотдачи</td>
-      <td>Соблюдение сроков</td>
-      <td>Минимальная предоплата</td>
-    </tr>
-  </table>
+  <img src="img/index.img/nerds-illustration 1.png" width='360' height='208' alt="logo"> <!--Тоже валидатор выдал ошибку с пробелом-->
+   <p>С 2004 года любим точность во всем:</p> <!--Вот тут исправила что раньше было таблицей, я правильно тебя поняла?-->
+    <ul>
+     <li>146%</li>
+     <li>100%</li>
+     <li>50%</li>
+    </ul>
+      <ul>
+        <li>Уровень самоотдачи</li>
+        <li>Соблюдение сроков</li>
+        <li>Минимальная предоплата</li>
+      </ul>
 </section>
 <section>
   <ul>
-    <li><a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/blank.html" alt="HTML Academy"></a>
+    <li><a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/blank.html" alt="HTML Academy"></a> <!--Вот тут засада. Задам вопрос отдельно по скачиванию СВГ и их векторов
+      , но я так понимаю их сейчас и не надо экспортировать?-->
     </li>
     <li><img src="img/blank.html" alt="Барбершоп Бородинский"></li>
     <li><img src="img/blank.html" alt="Pink"></li>
@@ -87,6 +93,8 @@
 </section>
 </main>
 <footer>
+  <img src="img/map 1.png" width='1440' height='416' alt="как добраться"> <!--Тоже валидатор выдал ошибку с пробелом-->
+  <img src="img/map-marker 1.png" width="231" height="190" alt="Геолокация"> <!--Тоже валидатор выдал ошибку с пробелом-->
   <div>
     <h3><a id="contacts">nёrds design studio</a></h3>
     <p>191186, Санкт-Петербург, <br>
@@ -96,11 +104,10 @@
   тел.: <a href="tel:+78122757575">+7 (812) 275-75-75</a>
     </p>
     <button>Напишите нам</button>
-    <img src="img/blank.html" alt="Это карта Спб">
   </div>
   <div>
     <ul>
-      <li> <a href="https://vk.com/login"><img src="img/blank.html" alt="VKavatar"></a></li>
+      <li> <a href="https://vk.com/login"><img src="img/blank.html" alt="VKavatar"></a></li> <!--Тот же вопрос и по соцсетям. Там и пнг и свг форматы есть в фигме для них, и наверное сейчас их тоже скачивать не надо?-->
       <li> <a href="https://www.facebook.com/"><img src="img/blank.html" alt="FBavatar"></a></li>
       <li> <a href="https://www.instagram.com/"><img src="img/blank.html" alt="InstagramAvatar"></a></li>
     </ul>
