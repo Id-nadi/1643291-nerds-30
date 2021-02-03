@@ -1,61 +1,50 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang='ru'>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <title>HTML Academy: Нёрдс</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="fonts/roboto.woff">
-    <link rel="stylesheet" href="fonts/roboto.woff2">
-    <link rel="stylesheet" href="fonts/robotobold.woff">
-    <link rel="stylesheet" href="fonts/robotobold.woff2">
-    <link rel="stylesheet" href="fonts/robotomedium.woff">
-    <link rel="stylesheet" href="fonts/robotomedium.woff2">
-    <link rel="icon" href="favicon.ico">
-    <link rel="icon" href="img/Vector.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="img/Vector.png">
-    <link rel="manifest" href="manifest.webmanifest">
+    <link rel='stylesheet' href='css/normalize.css'>
+    <link rel='stylesheet' href='css/style.css'>
+    <link rel='icon' href='favicon.ico'>
+    <link rel='icon' href='img/Vector.svg' type='image/svg+xml'>
+    <link rel='apple-touch-icon' href='img/-vector.png'>
+    <link rel='manifest' href='manifest.webmanifest'>
   </head>
   <body>
 <header>
-  <nav>
-  <a href="index.html"><img src="img/nerds-logo.svg" width='
-    159,87' height='65,02' alt="логотип Nerds"></a>
-    <ul>
-      <li><a href="img/blank.html">Студия</a></li>
-      <li><a href="img/blank.html">Клиенты</a></li>
-      <li><a href="catalog.html">Магазин</a></li>
-      <li><a href="#contacts">Контакты</a></li> 
-      <li>
-        <img src="img/Shape.png" width="15" height="11" alt="Корзина"> <!--Нужно ее сейчас делать или нет? Там два колесика отдельно идут...в общем я иконку подключила, если что и колесики вставлю-->
-        <a href="img/blank.html">Корзина</a></li>
-    </ul>
-  </nav>
+  <nav class='main-navigation'>
+    <a class='main-header-logo' href='index.html'><img src='img/nerds-logo.svg' width='160' height='65' alt='логотип Нёрдс'></a>
+      <ul class='main-list'>
+        <li><a href='#'>Студия</a></li>
+        <li><a href='#'>Клиенты</a></li>
+        <li><a href='catalog.html'>Магазин</a></li>
+        <li><a href='#'>Контакты </a></li>
+        <li><a class='cart' href='#'>Корзина</a></li>
+        </ul>
+    </nav>
 </header>
 <main>
 <h1>Магазин готовых шаблонов</h1>
 <section>
     <p>Стоимость</p>
-    <input type="range" min="0" max="15000" step="100" value="10000"> 
+    <input type='range' min='0' max='15000' step='100' value='10000'>
    <p>От</p>
-   <input type="number" min="0" max="15000" step="100" value="0"> 
+   <input type='number' min='0' max='15000' step='100' value='0'>
    <p>До</p>
-   <input type="number" min="0" max="15000" step="100" value="15000">
+   <input type='number' min='0' max='15000' step='100' value='15000'>
 </section>
-<form action="https://echo.htmlacademy.ru/" method="post">
+<form action='https://echo.htmlacademy.ru/'' method='post'>
 <p>сетка</p>
-<p><label><input type="radio" name="web" checked>Адаптивная</label></p>  
-<p><label><input type="radio" name="web">Фиксированная</label></p>
-<p><label><input type="radio" name="web">Резиновая</label></p>
+<p><label><input type='radio' name='web' checked>Адаптивная</label></p>
+<p><label><input type='radio' name='web'>Фиксированная</label></p>
+<p><label><input type='radio' name='web'>Резиновая</label></p>
     <p>особенности</p>
-    <p><label><input type="checkbox" name="features" checked>Слайдер</label></p>
-    <p><label><input type="checkbox" name="features">Блок преимуществ</label></p>
-    <p><label><input type="checkbox" name="features" checked>Новости</label></p>
-    <p><label><input type="checkbox" name="features">Галерея</label></p>
-    <p><label><input type="checkbox" name="features" >Корзина</label></p>
-<input type="submit" value="Показать">
+    <p><label><input type='checkbox' name='features' checked>Слайдер</label></p>
+    <p><label><input type='checkbox' name='features'>Блок преимуществ</label></p>
+    <p><label><input type='checkbox' name='features' checked>Новости</label></p>
+    <p><label><input type='checkbox' name='features'>Галерея</label></p>
+    <p><label><input type='checkbox' name='features'>Корзина</label></p>
+<input type='submit' value='Показать'>
 </form>
 <section>
 <p>сортировать:</p>
@@ -68,49 +57,49 @@
 <section>
     <ul>
         <li>
-          <img src="img/catalog.img/img-sedona 1.jpg" width="359" height="578" alt="Sedona town">
+          <img src='img/sedona-cat.jpg' width='359' height='578' alt='Город Седона'>
         <div>
-          <h2> <a href="#">Sedona</a></h2> 
+          <h2> <a href='#'>Sedona</a></h2>
           <p>Информационный сайт для туристов</p>
           <button>9900</button>
         </div>
         </li>
         <li>
-          <img src="img/catalog.img/img-pink 1.jpg" width="358" height="578" alt="PinkApp">
+          <img src='img/pink-cat.jpg' width='358' height='578' alt='Приложение Пинк'>
         <div>
-          <h2> <a href="#">Pink</a></h2>
+          <h2> <a href='#'>Pink</a></h2>
           <p>Мобильное приложение для iOS и Google Play</p>
           <button>Цена</button>
         </div>
         </li>
         <li>
-          <img src="img/catalog.img/img-barbershop 1.jpg" width="358" height="578" alt="Borodinski Barbershop">
+          <img src='img/b-shop-cat.jpg' width='358' height='578' alt='Барбершоп Бородинский'>
           <div>
-            <h2> <a href="#">Borodinski</a></h2>
+            <h2> <a href='#'>Borodinski</a></h2>
             <p>Информационный сайт и интернет-магазин для Барбершопа</p>
             <button>Цена</button>
           </div>
         </li>
         <li>
-          <img src="img/catalog.img/img-mishka 1.jpg" width="358" height="578" alt="Mishka home">
+          <img src='img/mishka-cat.jpg' width='358' height='578' alt='Мишка домашний декор'>
           <div>
-            <h2> <a href="#">Mishka</a></h2>
+            <h2> <a href='#'>Mishka</a></h2>
             <p>Интернет-магазин изделий ручной работы для дома</p>
             <button>Цена</button>
           </div>
         </li>
         <li>
-          <img src="img/catalog.img/img-aplus 1.jpg" width="358" height="578" alt="A plus Academy">
+          <img src='img/aplus-cat.jpg' width='358' height='578' alt='Академия А плюс'>
           <div>
-            <h2> <a href="#">A plus</a></h2>
+            <h2> <a href='#'>A plus</a></h2>
             <p>Образовательная платформа А плюс</p>
             <button>Цена</button>
           </div>
         </li>
         <li>
-          <img src="img/catalog.img/img-kvast 1.jpg" width="358" height="578" alt="Kvast">
+          <img src='img/kvast-cat.jpg' width='358' height='578' alt='Кваст'>
           <div>
-            <h2> <a href="#">Кваст</a></h2>
+            <h2> <a href='#'>Кваст</a></h2>
             <p>Интернет-магазин Кваст</p>
             <button>Цена</button>
           </div>
@@ -120,43 +109,42 @@
 <section>
     <ul>
         <li>
-          <a href="#">1</a>
+          <a href='#'>1</a>
         </li>
         <li>
           <a>2</a>
         </li>
         <li>
-          <a href="#">3</a>
+          <a href='#'>3</a>
         </li>
         <li>
-          <a href="#">Следующая</a>
+          <a href='#'>Следующая</a>
         </li>
       </ul>
 </section>
 </main>
-<footer>
-  <img src="img/map 1.png" width='1440' height='416' alt="как добраться">
-  <img src="img/map-marker 1.png" width="231" height="190" alt="Геолокация">
-  <div>
-    <h3><a id="contacts">nёrds design studio</a></h3>
+<footer class='main-footer'>
+  <img src='img/map.png' width='1440' height='416' alt='Как добраться'>
+  <div class='footer-contacts'>
+    <h3>nёrds design studio</h3>
     <p>191186, Санкт-Петербург, <br>
       ул. Б. Конюшенная, д. 19/8
     </p>
     <p>
-  тел.: <a href="tel:+78122757575">+7 (812) 275-75-75</a>
+  тел.: <a class='contact-phone' href='tel:+78122757575'>+7 (812) 275-75-75</a>
     </p>
-    <button>Напишите нам</button>
+    <button class='button'>Напишите нам</button>
   </div>
-  <div>
-    <ul>
-      <li> <a href="https://vk.com/login"><img src="img/blank.html" alt="VKavatar"></a></li> <!--Тот же вопрос и по соцсетям. Там и пнг и свг форматы есть в фигме для них, и наверное сейчас их тоже скачивать не надо?-->
-      <li> <a href="https://www.facebook.com/"><img src="img/blank.html" alt="FBavatar"></a></li>
-      <li> <a href="https://www.instagram.com/"><img src="img/blank.html" alt="InstagramAvatar"></a></li>
+  <div class='footer-social'>
+    <ul class='footer-list'>
+      <li> <a class='social-button' href='https://vk.com/login'><img src='img/vk-icon.png' alt='Иконка ВК'></a></li>
+      <li> <a class='social-button' href='https://www.facebook.com/'><img src='img/fb-icon.png' alt='Иконка Фейсбук'></a></li>
+      <li> <a class='social-button' href='https://www.instagram.com/'><img src='img/insta-icon.png' alt='Иконка Инстаграм'></a></li>
     </ul>
   </div>
-        <div>
-          <p>Давайте дружить, это выгодно!</p>
-          <p>Скидка 10% для друзей из социальных сетей.</p>
+        <div class='footer-promo'>
+          <p class='promo-large'>Давайте дружить, это выгодно!</p>
+          <p class='promo-small'>Скидка 10% для друзей из социальных сетей.</p>
         </div>
       </footer>
   </body>
