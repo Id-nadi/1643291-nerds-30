@@ -38,6 +38,7 @@
     --special-black: #283136;
     --footer-contacts: #666666;
     --footer-promo: #444444;
+    --hover-grey: #DFDFDF;
 }
 
 body {
@@ -72,32 +73,32 @@ img {
 
 /*Header*/
 
-.main-header {
+.header {
   background-color: var(--background-grey);
 }
 
-.main-navigation {
+.navigation {
   font-size: 16px;
   line-height: 30px;
   color: var(--basic-black);
   /*Написать код для серого прямоугольника*/
 }
 
-.main-header-logo {
+.header-logo {
   text-align: left;
 }
 
-.main-list {
+.header-list {
   list-style: none;
   text-align: center;
 }
 
-.main-navigation a {
+.navigation a {
   color: var(--basic-black);
 }
 
-.main-navigation a:hover,
-.main-navigation a:focus {
+.navigation a:hover,
+.navigation a:focus {
   color: var(--basic-salmon);
 }
 
@@ -200,6 +201,11 @@ img {
   list-style: none;
   text-align: center;
 }
+ /*Вопросики-вопросики. Не знаю, как делать ярким и бледным значок при наведении, нажани и т.п.*/
+.partners-item:hover,
+.partners-item:focus {
+  color: var(--basic-black)
+}
 
 /*Footer*/
 
@@ -238,7 +244,16 @@ img {
 }
 
 .social-button {
-  background-image: var(--basic-grey);
+  /*Это все просто эксперимент, просто чтоб кнопки хоть визуально видеть*/
+  border: 2px solid var(--basic-grey);
+  border-radius: 100%;
+  background: var(--basic-grey);
+}
+
+.social-button:hover,
+.social-button:focus {
+  background: var(--basic-salmon);
+  border: var(--basic-salmon);
 }
 
 /*Footer-promo*/
@@ -256,3 +271,112 @@ img {
   color: var(--footer-promo);
 }
 
+/*Страница каталога*/
+
+.catalog-header {
+  background-color: var(--background-grey);
+  font-size: 55px;
+  line-height: 55px;
+  text-align: center;
+}
+
+/*Box*/
+
+.box {
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--special-black);
+}
+
+.box-header {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color:var(--basic-black);
+}
+
+.price-carusel {
+  /*Пока не буду центрировать элемент, мне кажется сейчас это не нужно, не по заданию, и не хочу наворотить*/
+  width: 260px;
+  height: 80px;
+  left: 140px;
+  top: 488px;
+  background-color: var(--background-grey);
+}
+
+.price-rank {
+  font-size: 16px;
+  line-height: 22px;
+  text-transform: uppercase;
+}
+
+.price-number {
+  font-size: 16px;
+  line-height: 22px;
+  text-transform: uppercase;
+  width: 80px;
+  height: 38px;
+  left: 172px;
+  top: 582px;
+  background-color: var(--background-grey);
+}
+
+.box-button {
+  font-size: 16px;
+  line-height: 18px;
+  color: var(--basic-black);
+  background-color: var(--background-grey);
+  font-weight: medium;
+}
+
+/*Sorting*/
+
+.sorting-header {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: var(--basic-black);
+}
+
+.sorting-item {
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+ /*Sorting*/
+
+ /* См Line 52 catalog.html*/
+
+ .sorting-item {
+   display: inline-block;
+ }
+
+/*По разделу Clients тоже пока провал*/
+
+.clients-list {
+  list-style: none;
+}
+
+/*Pagination*/
+
+.pagination-item {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: var(--basic-black);
+  background-color: var(--background-grey);
+}
+
+.active {
+  background-color: var(--basic-white);
+  border: 1px solid var(--basic-grey);
+}
+
+.pagination-item:hover,
+.pagination-item:focus {
+  background-color: var(--hover-grey);
+}
