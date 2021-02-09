@@ -12,125 +12,123 @@
   </head>
   <body class='page-body inner-page'>
     <header class='header'>
-      <nav class='navigation'>
-      <a class='header-logo' href='index.html'><img src='img/nerds-logo.svg' width='160' height='65' alt='логотип Нёрдс'></a>
-        <ul class='header-list'>
+      <div class='header-wrapper'>
+         <nav class='navigation'>
+        <a class='header-logo' href='index.html'><img src='img/nerds-logo.svg' width='160' height='65' alt='логотип Нёрдс'></a>
+           <ul class='header-list'>
           <li><a href='#'>Студия</a></li>
           <li><a href='#'>Клиенты</a></li>
           <li><a href='catalog.html'>Магазин</a></li>
           <li> <a href='#'>Контакты </a></li>
-          <li><a class='cart' href='#'>Корзина</a></li>
           </ul>
+          <a class='cart' href='#'>Корзина</a>
       </nav>
-    </header>
-<main class='catalog'>
-<h1 class='catalog-header'>Магазин готовых шаблонов</h1>
-<div class='box'>
-  <section class='price'>
-  <p class='box-header'>Стоимость</p>
-  <p class='price-carusel'><input  type='range' min='0' max='15000' step='100' value='10000'></p>
- <p class='price-rank'>От</p>
- <input class='price-number' type='number' min='0' max='15000' step='100' value='0'>
- <p class='price-rank'>До</p>
- <input class='price-number' min='0' max='15000' step='100' value='15000'>
-</section>
-<form action='https://echo.htmlacademy.ru/' method='post'>
-  <p class='box-header'>сетка</p>
-  <p class='grid-type'><label><input class='grid-input' type='radio' name='web' checked>Адаптивная</label></p>
-  <p class='grid-type'><label><input class='grid-input' type='radio' name='web'>Фиксированная</label></p>
-  <p class='grid-type'><label><input class='grid-input' type='radio' name='web'>Резиновая</label></p>
-    <p class='box-header'>особенности</p>
-    <p class='extras-type'><label><input class='extras-input' type='checkbox' name='features' checked>Слайдер</label></p>
-    <p class='extras-type'><label><input class='extras-input' type='checkbox' name='features'>Блок преимуществ</label></p>
-    <p class='extras-type'><label><input class='extras-input' type='checkbox' name='features' checked>Новости</label></p>
-    <p class='extras-type'><label><input class='extras-input' type='checkbox' name='features'>Галерея</label></p>
-    <p class='extras-type'><label><input class='extras-input' type='checkbox' name='features'>Корзина</label></p>
-  <input class='box-button' type='submit' value='Показать'>
-  </form>
-</div>
-<section class='sorting'>
-<ul class='sorting-list'>
-<li class='sorting-header sorting-item'>сортировать:</li>
-<li class='sorting-item'><a href="#">по цене</a></li>
-<li class='sorting-item'><a href="#">по типу</a></li>
-<li class='sorting-item'><a href="#">по названию</a></li>
-</ul>
-</section>
-<section class='clients'>
-  <!--Я вообще не поняла, что за серые плашки с радиокнопками сверху каждой картинки,
-  какая у них смысловая нагрузка и т.п.-->
-  <!--И-таки не поняла то окно, которое всплывает принаведении на картинку с ценой и прочими надписями
-  я его сейчас должна сверстать? как-то отдельно? И потом подключить?-->
-    <ul class=clients-list>
-        <li class='clients-item'>
-          <img src='img/sedona-cat.jpg' width='359' height='578' alt='Город Седона'>
-        <div>
-          <h2> <a href='#'>Sedona</a></h2>
-          <p>Информационный сайт для туристов</p>
-          <button>9900</button>
-        </div>
-        </li>
-        <li class='clients-item'>
-          <img src='img/pink-cat.jpg' width='358' height='578' alt='Приложение Пинк'>
-        <div>
-          <h2> <a href='#'>Pink</a></h2>
-          <p>Мобильное приложение для iOS и Google Play</p>
-          <button>Цена</button>
-        </div>
-        </li>
-        <li class='clients-item'>
-          <img src='img/b-shop-cat.jpg' width='358' height='578' alt='Барбершоп Бородинский'>
+    </div>
+    <h1 class='header-wrapper catalog-header'>Магазин готовых шаблонов</h1>
+      </header>
+<main class='pre-catalog catalog'>
+  <div class='box'>
+    <section class='price'>
+    <p class='box-header'>Стоимость</p>
+    <p class='price-carusel'><input  type='range' min='0' max='15000' step='100' value='10000'></p>
+   <p class='price-rank'>От</p>
+   <input class='price-number' type='number' min='0' max='15000' step='100' value='0'>
+   <p class='price-rank'>До</p>
+   <input class='price-number' min='0' max='15000' step='100' value='15000'>
+  </section>
+  <form action='https://echo.htmlacademy.ru/' method='post'>
+    <p class='box-header'>сетка</p>
+    <p class='grid-type'><label><input class='grid-input' type='radio' name='web' checked>Адаптивная</label></p>
+    <p class='grid-type'><label><input class='grid-input' type='radio' name='web'>Фиксированная</label></p>
+    <p class='grid-type'><label><input class='grid-input' type='radio' name='web'>Резиновая</label></p>
+      <p class='box-header'>особенности</p>
+      <p class='extras-type'><label><input class='extras-input' type='checkbox' name='features' checked>Слайдер</label></p>
+      <p class='extras-type'><label><input class='extras-input' type='checkbox' name='features'>Блок преимуществ</label></p>
+      <p class='extras-type'><label><input class='extras-input' type='checkbox' name='features' checked>Новости</label></p>
+      <p class='extras-type'><label><input class='extras-input' type='checkbox' name='features'>Галерея</label></p>
+      <p class='extras-type'><label><input class='extras-input' type='checkbox' name='features'>Корзина</label></p>
+    <input class='button box-button' type='submit' value='Показать'>
+    </form>
+  </div>
+  <section class='sorting'>
+  <ul class='sorting-list'>
+  <li class='sorting-header sorting-item'>сортировать:</li>
+  <li class='sorting-item'><a href="#">по цене</a></li>
+  <li class='sorting-item'><a href="#">по типу</a></li>
+  <li class='sorting-item'><a href="#">по названию</a></li>
+  </ul>
+  </section>
+  <section class='clients'>
+      <ul class=clients-list>
+          <li class='sedona clients-item'>
+            <img src='img/sedona-cat.jpg' width='359' height='578' alt='Город Седона'>
           <div>
-            <h2> <a href='#'>Borodinski</a></h2>
-            <p>Информационный сайт и интернет-магазин для Барбершопа</p>
+            <h2> <a href='#'>Sedona</a></h2>
+            <p>Информационный сайт для туристов</p>
+            <button>9900</button>
+          </div>
+          </li>
+          <li class='clients-item'>
+            <img src='img/pink-cat.jpg' width='358' height='578' alt='Приложение Пинк'>
+          <div>
+            <h2> <a href='#'>Pink</a></h2>
+            <p>Мобильное приложение для iOS и Google Play</p>
             <button>Цена</button>
           </div>
-        </li>
-        <li class='clients-item'>
-          <img src='img/mishka-cat.jpg' width='358' height='578' alt='Мишка домашний декор'>
-          <div>
-            <h2> <a href='#'>Mishka</a></h2>
-            <p>Интернет-магазин изделий ручной работы для дома</p>
-            <button>Цена</button>
-          </div>
-        </li>
-        <li class='clients-item'>
-          <img src='img/aplus-cat.jpg' width='358' height='578' alt='Академия А плюс'>
-          <div>
-            <h2> <a href='#'>A plus</a></h2>
-            <p>Образовательная платформа А плюс</p>
-            <button>Цена</button>
-          </div>
-        </li>
-        <li class='clients-item'>
-          <img src='img/kvast-cat.jpg' width='358' height='578' alt='Кваст'>
-          <div>
-            <h2> <a href='#'>Кваст</a></h2>
-            <p>Интернет-магазин Кваст</p>
-            <button>Цена</button>
-          </div>
-        </li>
-    </ul>
-</section>
-<section class='pagination'>
-    <ul class='pagination-list'>
-      <li class='pagination-item previous'>
-        <a href='#'>Предыдущая</a>
-      </li>
-        <li class='pagination-item active'>
-          <a href='#'>1</a>
-        </li>
-        <li class='pagination-item'>
-          <a href='#'>2</a>
-        </li>
-        <li class='pagination-item'>
-          <a href='#'>3</a>
-        </li>
-        <li class='pagination-item next'>
-          <a href='#'>Следующая</a>
-        </li>
+          </li>
+          <li class='clients-item'>
+            <img src='img/b-shop-cat.jpg' width='358' height='578' alt='Барбершоп Бородинский'>
+            <div>
+              <h2> <a href='#'>Borodinski</a></h2>
+              <p>Информационный сайт и интернет-магазин для Барбершопа</p>
+              <button>Цена</button>
+            </div>
+          </li>
+          <li class='clients-item'>
+            <img src='img/mishka-cat.jpg' width='358' height='578' alt='Мишка домашний декор'>
+            <div>
+              <h2> <a href='#'>Mishka</a></h2>
+              <p>Интернет-магазин изделий ручной работы для дома</p>
+              <button>Цена</button>
+            </div>
+          </li>
+          <li class='clients-item'>
+            <img src='img/aplus-cat.jpg' width='358' height='578' alt='Академия А плюс'>
+            <div>
+              <h2> <a href='#'>A plus</a></h2>
+              <p>Образовательная платформа А плюс</p>
+              <button>Цена</button>
+            </div>
+          </li>
+          <li class='clients-item'>
+            <img src='img/kvast-cat.jpg' width='358' height='578' alt='Кваст'>
+            <div>
+              <h2> <a href='#'>Кваст</a></h2>
+              <p>Интернет-магазин Кваст</p>
+              <button>Цена</button>
+            </div>
+          </li>
       </ul>
-</section>
+  </section>
+  <section class='pagination'>
+      <ul class='pagination-list'>
+        <li class='pagination-item previous'>
+          <a href='#'>Предыдущая</a>
+        </li>
+          <li class='pagination-item active'>
+            <a href='#'>1</a>
+          </li>
+          <li class='pagination-item'>
+            <a href='#'>2</a>
+          </li>
+          <li class='pagination-item'>
+            <a href='#'>3</a>
+          </li>
+          <li class='pagination-item next'>
+            <a href='#'>Следующая</a>
+          </li>
+        </ul>
+  </section>
 </main>
 <footer class='main-footer'>
   <img src='img/map.png' width='1440' height='416' alt='Как добраться'>

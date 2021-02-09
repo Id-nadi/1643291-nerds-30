@@ -316,7 +316,8 @@ justify-self: left;
 }
 
 .social-button {
-  /*Это все просто эксперимент, просто чтоб кнопки хоть визуально видеть*/
+  /*Что не так с социальными сетями? Почему у меня не получаются красивые ровные квадраты задать через
+  ширину-высоту и радиус скругления?((*/
   border: 2px solid var(--basic-grey);
   background: var(--basic-grey);
 }
@@ -345,10 +346,24 @@ justify-self: left;
 /*Страница каталога*/
 
 .catalog-header {
-  background-color: var(--background-grey);
   font-size: 55px;
   line-height: 55px;
   text-align: center;
+  width: 960px;
+  margin: 0 auto; /*Вот тут не поняла, почему не получается как в главной странице: задать отдельно
+  header-wrapper с серым светом фона, а сам элемент центрировать*/
+}
+
+.pre-catalog {
+  display: grid;
+  grid-template-columns: 260px 1fr 1fr;
+  align-content: start;
+  width:960px;
+  margin: 0 auto;
+}
+
+.catalog {
+  margin-top: 63px;;
 }
 
 /*Box*/
@@ -418,13 +433,12 @@ justify-self: left;
 }
  /*Sorting*/
 
- /* См Line 52 catalog.html*/
 
  .sorting-item {
    display: inline-block;
  }
 
-/*По разделу Clients тоже пока провал*/
+/*Clients*/
 
 .clients-list {
   list-style: none;
@@ -432,14 +446,30 @@ justify-self: left;
 
 /*Pagination*/
 
-.pagination-item {
+.pagination-list {
+  list-style: none;
   display: inline-block;
+}
+/*Кошмарный сон с этой пагинацией. Ничего не понимаю, как ее выравнивать и в божеский вид приводить*/
+
+.pagination-item {
+  text-align: center;
+  width: 50px;
+  height: 50px;
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
   text-transform: uppercase;
   color: var(--basic-black);
   background-color: var(--background-grey);
+}
+
+.previous {
+  width: 260px;
+}
+
+.next {
+  width: 260px;
 }
 
 .active {
