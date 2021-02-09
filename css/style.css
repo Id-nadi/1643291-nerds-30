@@ -41,6 +41,10 @@
     --hover-grey: #DFDFDF;
 }
 
+.page {
+height: 100%;
+}
+
 body {
 font-family: 'Roboto','Arial', sans-serif;
 font-style: normal;
@@ -59,6 +63,8 @@ img {
   font-size: 16px;
   line-height: 18px;
   text-transform: uppercase;
+  width: 160px;
+  height: 50px;;
   color: var(--basic-white);
   background-color: var(--basic-salmon);
 }
@@ -71,9 +77,22 @@ img {
   background-color: var(--basic-yellow);
 }
 
+/*Global*/
+
+.page-body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  align-content: start;
+
+}
+.page-header {
+  display: none;
+}
+
 /*Header*/
 
-.header {
+.header-wrapper {
   background-color: var(--background-grey);
 }
 
@@ -81,16 +100,25 @@ img {
   font-size: 16px;
   line-height: 30px;
   color: var(--basic-black);
-  /*Написать код для серого прямоугольника*/
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width:960px;
+  margin:0 auto;
 }
 
 .header-logo {
-  text-align: left;
+grid-column: 1/1;
+justify-self: left;
+}
+.cart {
+  grid-column: 3/3;
+  justify-self: right;
 }
 
 .header-list {
   list-style: none;
-  text-align: center;
+  grid-column: 2/2;
+  justify-self: center;
 }
 
 .navigation a {
@@ -104,34 +132,61 @@ img {
 
 /*Description*/
 
-.description {
-  text-align: left;
+.description-wrapper {
   background-color: var(--background-grey);
+  }
+
+.description {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width:960px;
+  margin: 0 auto;
+}
+
+.description-img {
+  grid-column: 2/2;
+ /* width: 760px;
+  height: 431 px; Беда тут, на всякий сохранила ширину-высоту*/
 }
 
 .description-large {
   font-size: 55px;
   line-height: 55px;
   color: var(--basic-black);
+  grid-column: 1/1;
 }
 .description-small {
   font-size: 16px;
   line-height: 24px;
   color: var(--special-black);
+  grid-column: 1/1;
 }
-.description-slider /*Это вот три радиокнопки, которые типаслайдер. Я так понимаю их как-то потом буду выравнивать*/
 
-/*Index-column*/
-/*я засунула в разметке в див 2 большие секции, чтобы потом их одинаково выровнять и разделить. Возможно я ошибаюсь! Но они визуально разделены на макете. Возможно в этот див еще секцию партнеров надо засунуть, но я сомневаюсь. А может и вообще ничего не надо - и просто вставить то, что на макете рназывается rectangle 16 и rectangle 9*/
+.description-button {
+  grid-column: 1/1;
+  width: 240px;
+}
+.description-slider {
+  grid-column: 2/2;
+}/*Это вот три радиокнопки, которые типаслайдер. Я так понимаю их как-то потом буду выравнивать*/
 
 /*Features*/
 
-.features-list {
-  list-style: none;
+
+.index-column {
+  width:960px;
+  margin: 0 auto;
 }
 
-.features-item {
+.features-list {
   list-style: none;
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 100px;
+  /*Не совсем понимаю, почему оступ слева появился, по макету все центрировано одинаково,
+  но когда я ввела отступы поехал левый край вправо. И вот тут бы justify-self задать
+  но почему-то не работает если я по классам его каждому li отдельно задаю*/
 }
 
 .features-item h2 {
@@ -147,16 +202,25 @@ img {
 
 /*Work*/
 
+.work-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+/*А вот здесь наверное будет флексами дальнейшее выравнивание*/
+
 .work {
   font-size: 16px;
   line-height: 24px;
   color: var(--special-black);
+  grid-column: 1/1;
 }
 
 .work-large {
   font-size: 45px;
   line-height: 45px;
   color: var(--basic-black);
+  grid-column: 1/2;
+  grid-row: 2/2;
 }
 
 .work h3 {
@@ -164,12 +228,13 @@ img {
   line-height: 24px;
   font-weight: bold;
   text-transform: uppercase;
+  grid-column: 1/2;
+  grid-row: 2/2;
 }
 
-.work-list
-/*Здесь наверное будет лайфхак как булиты заменить на линию, которая в макете называется rectangle 12*/
-
-
+.workstyle {
+  grid-column: 2/2;
+}
 .workstyle-image {
   background-color: var(--basic-grey);
 }
@@ -200,6 +265,12 @@ img {
 .partners-list {
   list-style: none;
   text-align: center;
+  width:960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 75px;
+  margin-bottom: 80px;
 }
  /*Вопросики-вопросики. Не знаю, как делать ярким и бледным значок при наведении, нажани и т.п.*/
 .partners-item:hover,
@@ -241,12 +312,12 @@ img {
 
 .footer-list {
   list-style: none;
+  border-radius: 100%;
 }
 
 .social-button {
   /*Это все просто эксперимент, просто чтоб кнопки хоть визуально видеть*/
   border: 2px solid var(--basic-grey);
-  border-radius: 100%;
   background: var(--basic-grey);
 }
 
@@ -380,3 +451,4 @@ img {
 .pagination-item:focus {
   background-color: var(--hover-grey);
 }
+
