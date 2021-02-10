@@ -168,7 +168,8 @@ justify-self: left;
 }
 .description-slider {
   grid-column: 2/2;
-}/*Это вот три радиокнопки, которые типаслайдер. Я так понимаю их как-то потом буду выравнивать*/
+  display: inline-block;
+}
 
 /*Features*/
 
@@ -184,9 +185,6 @@ justify-self: left;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 100px;
-  /*Не совсем понимаю, почему оступ слева появился, по макету все центрировано одинаково,
-  но когда я ввела отступы поехал левый край вправо. И вот тут бы justify-self задать
-  но почему-то не работает если я по классам его каждому li отдельно задаю*/
 }
 
 .features-item h2 {
@@ -450,7 +448,7 @@ justify-self: left;
   list-style: none;
   display: inline-block;
 }
-/*Кошмарный сон с этой пагинацией. Ничего не понимаю, как ее выравнивать и в божеский вид приводить*/
+
 
 .pagination-item {
   text-align: center;
