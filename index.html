@@ -13,33 +13,39 @@
   <body class='page-body'>
 <header class='header'>
   <div class='header-wrapper'>
-    <a class='header-logo' href='index.html'><img src='img/nerds-logo.svg' width='160' height='65' alt='логотип Нёрдс'></a>
-     <nav class='navigation'>
-       <ul class='header-list'>
-      <li><a href='#'>Студия</a></li>
-      <li><a href='#'>Клиенты</a></li>
-      <li><a href='catalog.html'>Магазин</a></li>
-      <li> <a href='#'>Контакты </a></li>
-      </ul>
-  </nav>
-  <a class='cart' href='#'>Корзина</a>
-</div>
+    <div class='header-center'>
+      <a class='header-logo' href='index.html'><img src='img/nerds-logo.svg' width='160' height='65' alt='логотип Нёрдс'></a>
+      <div class='cite-navigation'>
+        <nav class='navigation'>
+        <ul class='header-list'>
+       <li class='header-item'><a href='#'>Студия</a></li>
+       <li  class='header-item'><a href='#'>Клиенты</a></li>
+       <li  class='header-item'><a href='catalog.html'>Магазин</a></li>
+       <li  class='header-item'><a href='#'>Контакты </a></li>
+       </ul>
+   </nav>
+  </div>
+  <div class='user-navigation'>
+    <a class='cart' href='#'>Корзина</a>
+  </div>
+    </div>
+  </div>
   </header>
 <main class='container'>
   <h1 class='page-header'>Дизайн-студия &#34;Nerds&#34;</h1>
     <div class='description-wrapper'>
-      <section class='description'>
-        <img class='description-img' src='img/nerds-ind-slider.png' width='760' height='431' alt='Красивые телефоны'>
-        <p class='description description-large'>Долго, дорого,
-           скурпулезно.</p>
-        <p class='description description-small'>Математически выверенный дизайн
-           для вашего сайта или мобильного приложения.</p>
-         <button  class='button description-button' type='button' name='button'>Узнать больше</button>
-        <input class='description-slider' type='radio' name='image1' value='phones' checked>
+    <section class='description'>
+      <img class='description-image' src='img/nerds-ind-slider.png' width='760' height='431' alt='Красивые телефоны'>
+        <p class='description-large'>Долго, дорого,
+          скурпулезно.</p>
+       <p class='description-small'>Математически выверенный дизайн
+          для вашего сайта или мобильного приложения.</p>
+        <button  class='button description-button' type='button' name='button'>Узнать больше</button>
+      <input class='description-slider' type='radio' name='image1' value='phones' checked>
         <input class='description-slider' type="radio" name="image2" value='поканезнаю'>
         <input class='description-slider' type="radio" name="image3" value='поканезнаю1'>
-      </section>
-    </div>
+    </section>
+        </div>
   <div class='index-column'>
     <section class='features'>
     <ul class='features-list'>
@@ -77,20 +83,28 @@
     <li class='work-item'>Слайдшоу и видео для корпоративных презентаций</li>
   </ul>
   </section>
-<section class='workstyle'>
-  <img class='workstyle-image' src='img/nerds-illustr.png' width='360' height='208' alt='Логотип Нёрдз'>
-   <p>С 2004 года любим точность во всем:</p>
-    <ul class='workstyle-numbers'>
-     <li>146%</li>
-     <li>100%</li>
-     <li>50%</li>
-    </ul>
-      <ul class='workstyle-description'>
-        <li>Уровень самоотдачи</li>
-        <li>Соблюдение сроков</li>
-        <li>Минимальная предоплата</li>
-      </ul>
-  </section>
+  <div class='workstyle'>
+    <div class='workstyle-box'>
+      <img class='workstyle-image' src='img/nerds-illustr.png' width='360' height='208' alt='Логотип Нёрдз'>
+      <p class='workstyle-paragraph'>С 2004 года любим точность во всем:</p>
+    </div>
+   <div class='percent-box'>
+    <ul class='percent-list'>
+      <li class='percent-item'>
+       <p class='workstyle-numbers'>146%</p>
+       <p class='workstyle-description'>Уровень самоотдачи</p>
+       </li>
+      <li class='percent-item'>
+       <p class='workstyle-numbers'>100%</p>
+       <p class='workstyle-description'>Соблюдение сроков</p>
+       </li>
+      <li class='percent-item'>
+       <p class='workstyle-numbers'>50%</p>
+       <p class='workstyle-description'>Минимальная предоплата</p>
+       </li>
+     </ul>
+   </div>
+  </div>
 </div>
 
 </div>
@@ -116,17 +130,19 @@
     </p>
     <button class='button'>Напишите нам</button>
   </div>
-  <div class='footer-social'>
-    <ul class='footer-list'>
-      <li> <a class='social-button' href='https://vk.com/login'><img src='img/vk-icon.png' alt='Иконка ВК'></a></li>
-      <li> <a class='social-button' href='https://www.facebook.com/'><img src='img/fb-icon.png' alt='Иконка Фейсбук'></a></li>
-      <li> <a class='social-button' href='https://www.instagram.com/'><img src='img/insta-icon.png' alt='Иконка Инстаграм'></a></li>
-    </ul>
+  <div class='footer-container'>
+    <div class='footer-social'>
+      <ul class='footer-list'>
+        <li class='footer-item'> <a href='https://vk.com/login'><img class='social-button' src='img/vk-icon.png' alt='Иконка ВК'></a></li>
+        <li class='footer-item'> <a href='https://www.facebook.com/'><img class='social-button' src='img/fb-icon.png' alt='Иконка Фейсбук'></a></li>
+        <li class='footer-item'> <a href='https://www.instagram.com/'><img class='social-button' src='img/insta-icon.png' alt='Иконка Инстаграм'></a></li>
+      </ul>
+    </div>
+          <div class='footer-promo'>
+            <p class='promo-large'>Давайте дружить, это выгодно!</p>
+            <p class='promo-small'>Скидка 10% для друзей из социальных сетей.</p>
+          </div>
   </div>
-        <div class='footer-promo'>
-          <p class='promo-large'>Давайте дружить, это выгодно!</p>
-          <p class='promo-small'>Скидка 10% для друзей из социальных сетей.</p>
-        </div>
       </footer>
   </body>
 </html>
