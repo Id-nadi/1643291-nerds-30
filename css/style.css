@@ -412,21 +412,55 @@ margin-left: 30px;
   line-height: 55px;
   text-align: center;
   width: 960px;
-  margin: 0 auto; /*Вот тут не поняла, почему не получается как в главной странице: задать отдельно
-  header-wrapper с серым светом фона, а сам элемент центрировать*/
-}
-
-.pre-catalog {
-  display: grid;
-  grid-template-columns: 260px 1fr 1fr;
-  align-content: start;
-  width:960px;
   margin: 0 auto;
 }
 
-.catalog {
-  margin-top: 63px;;
+.shop-wrap {
+  background-color: var(--background-grey);
+  padding-top: 87px;
+  padding-bottom: 108px;
 }
+
+.shop {
+font-weight: 500;
+font-size: 55px;
+line-height: 55px;
+text-align: center;
+width: 960px;
+margin: 0 auto;
+}
+
+.sorting-header {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: var(--basic-black);
+  margin-left: 120px;
+}
+ /*Sorting*/
+
+.sorting-container {
+  width: 960px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sorting-list {
+  display: flex;
+}
+
+.sorting-item {
+  list-style: none;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+  margin-left: 40px;
+  min-width: 60px;
+}
+
 
 /*Box*/
 
@@ -434,6 +468,15 @@ margin-left: 30px;
   font-size: 16px;
   line-height: 20px;
   color: var(--special-black);
+  width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 40px;
+}
+
+.price {
+  grid-column: 1/2;
 }
 
 .box-header {
@@ -451,6 +494,21 @@ margin-left: 30px;
   left: 140px;
   top: 488px;
   background-color: var(--background-grey);
+}
+
+.price-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.from {
+  display: flex;
+  justify-content: space-between; /*Не понимаю, почему отступы не появляются между р и инпут*/
+}
+
+.to {
+  display: flex;
+  justify-content: space-between; /*Не понимаю, почему отступы не появляются между р и инпут*/
 }
 
 .price-rank {
@@ -478,44 +536,29 @@ margin-left: 30px;
   font-weight: medium;
 }
 
-/*Sorting*/
-
-.sorting-header {
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 30px;
-  text-transform: uppercase;
-  color: var(--basic-black);
-}
-
-.sorting-item {
-  font-size: 14px;
-  line-height: 18px;
-  text-transform: uppercase;
-}
- /*Sorting*/
-
-
- .sorting-item {
-   display: inline-block;
- }
 
 /*Clients*/
 
 .clients-list {
   list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 41px;
 }
 
-/*Pagination*/
+.pagination {
+  grid-column: 1/2;
+}
 
 .pagination-list {
   list-style: none;
-  display: inline-block;
+  display: flex;
+  max-width: 440px;
+  justify-content: space-between;
 }
 
 
 .pagination-item {
-  text-align: center;
   width: 50px;
   height: 50px;
   font-weight: 500;
@@ -528,6 +571,7 @@ margin-left: 30px;
 
 .previous {
   width: 260px;
+  display: none
 }
 
 .next {
