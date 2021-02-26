@@ -40,12 +40,15 @@
     --active-yellow: #E5A722;
     --basic-grey: #A6A6A6;
     --background-grey: #EEEEEE;
+    --border-pagination-grey: #DBDBDB;
 
     --special-black: #283136;
     --footer-contacts: #666666;
     --footer-promo: #444444;
     --hover-grey: #DFDFDF;
     --social-button-grey: #E1E1E1;
+    --scale-grey: #D7DCDF;
+    --filter-input-grey: #4D4D4D;
 }
 
 .page {
@@ -55,6 +58,10 @@ height: 100%;
 body {
 font-family: 'Roboto','Arial', sans-serif;
 font-style: normal;
+}
+
+ul {
+  list-style: none;
 }
 
 a {
@@ -109,6 +116,7 @@ img {
 .header-center {
   width: 980px;
   margin: 0 auto;
+  padding: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -175,7 +183,7 @@ img {
   right: 70px;
   content: "";
   width: 15px;
-  height: 11px;
+  height: 15px;
   background-image: url(../img/cart-icon.png);
   background-repeat: no-repeat;
   background-position: 0 0;
@@ -545,27 +553,27 @@ background-color: var(--hover-green);
 
 .footer-item {
   margin-right: 9px;
-}
-
-.social-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 81px;
-    height: 81px;
-    border-radius: 50%;
+  background-color: var(--social-button-grey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 81px;
+  height: 81px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .vk {
-  background: url(../img/vk-icon.png) center no-repeat var(--social-button-grey);
-}
+  background: url(../img/vk-icon.png) center no-repeat;
+} /*Почему-то не получается так. Я уже и через класс и а задавала, и по-всякому. Почему-то не появляется
+ссылка сверху серого фона, заданного для ЛИ*/
 
 .fb {
-  background: url(../img/fb-icon.png) center no-repeat var(--social-button-grey);
+  background: url(../img/fb-icon.png) center no-repeat;
 }
 
 .insta {
-  background: url(../img/insta-icon.png) center no-repeat var(--social-button-grey);
+  background: url(../img/insta-icon.png) center no-repeat;
 }
 
 .footer-promo {
@@ -583,9 +591,10 @@ background-color: var(--hover-green);
 Соответственно, если задать опэсити всему элементу - там полностью кружок будет задействован.*/
 
 .vk:active {
-  background-image: url(../img/vk-icon.png) rgba(255,255,255,0.3);
   background-color: var(--active-red);
 }
+
+
 
 .fb:hover,
 .fb:focus {
@@ -626,6 +635,8 @@ background-color: var(--hover-green);
 
 /*Страница каталога*/
 
+/*Left column: sorting, filters*/
+
 .catalog-header {
   font-size: 55px;
   line-height: 55px;
@@ -636,156 +647,427 @@ background-color: var(--hover-green);
 
 .shop-wrap {
   background-color: var(--background-grey);
-  padding-top: 87px;
   padding-bottom: 108px;
+  margin-bottom: 55px;
 }
 
 .shop {
 font-weight: 500;
 font-size: 55px;
-line-height: 55px;
 text-align: center;
 width: 960px;
 margin: 0 auto;
+padding-top: 72px;
 }
 
-.sorting-header {
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 30px;
-  text-transform: uppercase;
-  color: var(--basic-black);
-  margin-left: 120px;
-}
- /*Sorting*/
-
-.sorting-container {
-  width: 960px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.sorting-list {
-  display: flex;
-}
-
-.sorting-item {
-  list-style: none;
-  font-size: 14px;
-  line-height: 18px;
-  text-transform: uppercase;
-  margin-left: 40px;
-  min-width: 60px;
-}
-
-
-/*Box*/
-
-.box {
-  font-size: 16px;
-  line-height: 20px;
-  color: var(--special-black);
-  width: 960px;
-  margin: 0 auto;
+.page-catalog {
   display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 40px;
+  grid-template-columns: min-content 1fr;
+  gap: 80px;
 }
 
-.price {
-  grid-column: 1/2;
-}
+/*И вот тут я не поняла вообще ничего. В демке был какой-то хак про выравнивание. Примерно такой:
+в фигме высота элемента есть, но добавляя бар на 2 пикселя шириной, и если мы хотим его выровнять
+посередине, мы должны из высоты элемента вычесть 2 пикселя высоты бара и поделить на 2. Тадам:
+элемент оказывается нихрена не посередине, потому что "Так как внутренние отступы учитываются
+в размер объекта, уменьшим высоту объекта на размер верхнего внутреннего отступа." ШТА?!?!?
+Ничего не поняла, что за скрытый бонус паддинга, но теперь вообще неясно, откуда мне
+высоту элементов брать или как ее высчитывать, чтобы было правильно. Раз уж в Фигме все неправильно.
+Пишу этот коммент тут потому что на странице каталога огромный элемент получается по высоте (шапка+заголовок)
+и я не понимаю - это так надо или это я так скрытые бонусы от паддингов не пересчитала.*/
 
-.box-header {
-  font-weight: bold;
+
+.filter-item legend {
   font-size: 18px;
   line-height: 30px;
   text-transform: uppercase;
-  color:var(--basic-black);
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
 }
 
-.price-carusel {
-  /*Пока не буду центрировать элемент, мне кажется сейчас это не нужно, не по заданию, и не хочу наворотить*/
+.filter-item {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.range fieldset {
+ margin-bottom: 54px;
+}
+
+.range-filter {
   width: 260px;
-  height: 80px;
-  left: 140px;
-  top: 488px;
-  background-color: var(--background-grey);
+  margin-top: 49px;
 }
 
-.price-container {
+.range-controls {
+  position: relative;
+  height: 41px;
+  padding-top: 39px;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-bottom: 15px;
+  background-color: var(--background-grey) ;
+  border-radius: 5px;
+}
+
+.range-controls .scale {
+  height: 2px;
+  background: var(--scale-grey) ;
+}
+
+.range-controls .bar {
+  width: 70%;
+  height: 2px;
+  background: var(--basic-green);
+}
+
+.range-controls .toggle {
+  position: absolute;
+  top: 31px;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  padding: 0;
+  border: 8px solid var(--basic-white);
+  background-color: var(--basic-grey);
+  border-radius: 50%;
+  box-shadow: 0 2px 1px 0 var(--background-grey);
+  cursor: pointer;
+}
+
+.range-controls .toggle-min {
+  left: 18px;
+}
+
+.range-controls .toggle-max {
+  left: 160px;
+}
+
+.price-controls {
   display: flex;
   justify-content: space-between;
 }
 
-.from {
-  display: flex;
-  justify-content: space-between; /*Не понимаю, почему отступы не появляются между р и инпут*/
-}
-
-.to {
-  display: flex;
-  justify-content: space-between; /*Не понимаю, почему отступы не появляются между р и инпут*/
-}
-
-.price-rank {
-  font-size: 16px;
-  line-height: 22px;
+.price-controls label {
   text-transform: uppercase;
+  color: var(--special-black);
+  font-size: 16px;
 }
 
-.price-number {
-  font-size: 16px;
-  line-height: 22px;
-  text-transform: uppercase;
-  width: 80px;
-  height: 38px;
-  left: 172px;
-  top: 582px;
+.price-controls input {
+  width: 60px;
+  padding: 10px;
+  margin-left: 10px;
+  text-align: center;
+  color: var(--special-black);
+  border: none;
+  border-radius: 5px;
   background-color: var(--background-grey);
+  font-family: inherit;
+  font-size: inherit;
 }
 
-.box-button {
-  font-size: 16px;
-  line-height: 18px;
+/*Radio-buttons*/
+
+.filter {
+  width: 260px;
+}
+
+.filter fieldset {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 43px;
+  border: none;
+}
+
+.filter-header {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
   color: var(--basic-black);
+  margin-bottom: 14px;
+}
+
+.filter ul {
+  line-height: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.filter li {
+  margin-bottom: 19px;
+  padding-left: 36px;
+}
+
+.filter-button {
+  width: 260px;
+  font-weight: 500;
+  color: #000000;
   background-color: var(--background-grey);
-  font-weight: medium;
+}
+
+.filter-button:hover,
+.filter-button:focus {
+  background-color: var(--hover-grey);
+}
+
+.filter-button:active {
+  opacity: 0.3;
+  box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
+} /*Не понимаю, почему она себя так ведет. У нее состояние нажатия одинаково с нажатием у пагинации.
+у пагинации все отлично выходит по макету, а тут херня. При идентичном коде.*/
+
+.filter-radio-item label {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  user-select: none;
+}
+
+.filter-radio-input + label::before {
+  content: "";
+  position: absolute;
+  left: -36px;
+  top: -4px;
+  width: 17px;
+  height: 17px;
+  background-color: var(--basic-white);
+  border: 4px solid var(--filter-input-grey);
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+.filter-radio-input:checked + label::after {
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: 4px;
+  width: 9px;
+  height: 9px;
+  background-color: var(--filter-input-grey);
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+label:hover::before,
+label:focus::before {
+  opacity: 1;
+}
+
+.filter-radio-input:checked + label:hover::after,
+.filter-radio-input:checked + label:focus::after {
+  opacity: 1;
+}
+
+/*Checkbox-buttons*/
+
+.filter-checkbox-item label {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  user-select: none;
+}
+
+.filter-checkbox-input + label::before {
+  content: "";
+  position: absolute;
+  left: -36px;
+  top: -4px;
+  width: 25px;
+  height: 23px;
+  border: 2px solid var(--filter-input-grey);
+  border-radius: 3px;
+  opacity: 0.4;
+}
+
+/*Тут я потерялась. Эта галочка рассекает границу, я лично на ЦСС такое не реализую, значит,
+предполагаю, что надо скачать картинку? как в демке? Скачала, но получается полная херня
+хотя якобы картинка по размерам должна совпадать полностью с моими прямоугольниками. Ну,
+так говорит Фигма. В общем так бодро вышло с радиокнопками и так никак - с чекбоксом.*/
+
+.filter-checkbox-input:checked + label::before {
+  content: "";
+  position: absolute;
+  left: -36;
+  top: -4px;
+  border: none;
+  width: 25px;
+  height: 23px;
+  background-image: url(../img/checkbox-on.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+label:hover::before,
+label:focus::before {
+  opacity: 1;
 }
 
 
 /*Clients*/
 
-.clients-list {
-  list-style: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 41px;
+h2 {
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
 }
 
-.pagination {
-  grid-column: 1/2;
+.page-catalog {
+  width: 960px;
+  margin: 0 auto;
+  padding: 0;
 }
 
-.pagination-list {
-  list-style: none;
+.catalog-sorting-wrap {
+  margin: 0 auto;
+  margin-bottom: 56px;
+  padding: 0;
   display: flex;
-  max-width: 440px;
   justify-content: space-between;
 }
 
+.catalog-sorting {
+  display: flex;
+}
 
-.pagination-item {
-  width: 50px;
-  height: 50px;
+.catalog-sorting-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.catalog-sorting-item {
+  margin-right: 25px;
+  opacity: 0.3;
+}
+
+.catalog-sorting-item a {
+  font-size: 14px;
+  line-height: 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--basic-black);
+}
+
+.catalog-sorting-item:hover,
+.catalog-sorting-item:focus {
+  opacity: 0.6;
+}
+
+.arrows-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.arrows-item {
+  margin-left: 18px;
+  opacity: 0.3;
+}
+
+.arrows-item:hover,
+.arrows-item:focus {
+  opacity: 0.6;
+}
+
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.clients-list {
+  width: 960;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 41px;
+  row-gap: 30px;
+  margin-left: 0;
+  margin-bottom: 55px;
+  padding-left: 0;
+}
+
+.clients-item {
+  background-color: var(--filter-input-grey);
+  padding-top: 40px;
+  padding: 0;
+  margin: 0;
+  border-radius: 3px;
+  position: relative;
+}
+
+.sedona img {
+  position: absolute;
+  bottom: 0;
+}
+
+.catalog-slider-list {
+  display: flex;
+  position: absolute;
+  left: -16px;
+  top: 13px;
+  bottom: 13px;
+}
+
+.catalog-slider-item {
+  height: 14px;
+  width: 14px;
+  background-color: var(--basic-white);
+  border-radius: 50%;
+  margin-right: 9px;
+}
+
+/*Pagination*/
+
+.pagination-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 60px;
+  list-style: none;
+}
+
+.pagination-item a {
+  display: block;
+  padding: 15px 20px;
+  background-color: var(--background-grey);
+  color: var(--basic-black);
+  border-radius: 3px;
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
-  text-transform: uppercase;
-  color: var(--basic-black);
-  background-color: var(--background-grey);
+}
+
+.pagination-item {
+  margin-right: 11px;
+}
+
+.pagination-item a:hover,
+.pagination-item a:focus {
+background-color: var(--hover-grey);
+border-radius: 3px;
+} /*Не понимаю, почему при наведении элемент увеличивается вниз и граница перестает быть
+скругленной.*/
+
+.pagination-item a:active {
+opacity: 0.3;
+box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
+border-radius: 3px;
+} /*А тут не понимаю, почему активный элемент больше на неск пикселей вниз, чем неактивные*/
+
+.pagination-item-current a {
+  background-color: var(--basic-white);
+  border: 3px solid var(--border-pagination-grey);
+  border-radius: 3px;
+  padding: 15px 20px;
 }
 
 .previous {
@@ -795,12 +1077,10 @@ margin: 0 auto;
 
 .next {
   width: 260px;
+  text-align: center;
 }
 
-.active {
-  background-color: var(--basic-white);
-  border: 1px solid var(--basic-grey);
-}
+
 
 .pagination-item:hover,
 .pagination-item:focus {
