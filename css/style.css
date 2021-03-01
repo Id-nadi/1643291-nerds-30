@@ -42,6 +42,7 @@
     --background-grey: #EEEEEE;
     --border-pagination-grey: #DBDBDB;
     --border-button-grey:  #C1C1C1;
+    --catalog-clients-border: #C4C4C4;
 
     --special-black: #283136;
     --footer-contacts: #666666;
@@ -649,7 +650,6 @@ padding-top: 72px;
 .page-catalog {
   display: grid;
   grid-template-columns: min-content 1fr;
-  gap: 80px;
 }
 
 /*И вот тут я не поняла вообще ничего. В демке был какой-то хак про выравнивание. Примерно такой:
@@ -912,6 +912,7 @@ h2 {
   margin: 0 auto;
   margin-bottom: 56px;
   padding: 0;
+  padding-left: 41px;
   display: flex;
   justify-content: space-between;
 }
@@ -923,14 +924,14 @@ h2 {
 .catalog-sorting-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   margin: 0;
   padding: 0;
 }
 
 .catalog-sorting-item {
-  margin-right: 25px;
+  margin-left: 25px;
   opacity: 0.3;
+  justify-content: flex-end;
 }
 
 .catalog-sorting-item a {
@@ -954,7 +955,8 @@ h2 {
 }
 
 .arrows-item {
-  margin-left: 18px;
+  justify-content: flex-end;
+  padding-left: 18px;
   opacity: 0.3;
 }
 
@@ -968,20 +970,13 @@ h2 {
 
 /*Clients*/
 
-/*Не понимаю, в чем проблема, у меня ни одно изменение не делается. Ни паддинг, ни видимый элемент
-чтобы навести на картоску товара и надпись появилась - вообще ничего. Может дело в гриде? Не знаю,
-уже все переделала, кроме разве что дисплей-грид. Но не должен же он так мертво влиять на элементы?*/
-
 .clients-list {
   width: 960;
   list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 41px;
+  column-gap: 40px;
   row-gap: 30px;
-  margin-left: 0;
-  margin-bottom: 55px;
-  padding-left: 0;
 }
 
 .clients-info {
@@ -990,14 +985,36 @@ h2 {
 
 .clients-item {
   margin: 0;
+  padding-top: 40px;
   position: relative;
+  border-radius: 5px;
+  border: 1px solid var(--catalog-clients-border)
 }
 
-.clients-info .current {
+.clients-item:before {
+  content: '';
+  background: url(../img/catalog-bar.svg) no-repeat;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  border-top-right-radius: 4px;
+}
+
+.clients-current {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   background-color: var(--background-grey);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 44px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 .clients-header {
@@ -1005,17 +1022,15 @@ h2 {
   font-weight: bold;
   font-size: 18px;
   line-height: 30px;
+  color: var(--basic-black);
+  margin-bottom: 0;
 }
 
 .clients-text {
   font-size: 16px;
   line-height: 18px;
   color: var(--footer-contacts);
-}
-
-.clients-item a {
-  padding-top: 40px;
-  background-color: var(--filter-input-grey);
+  text-align: center;
 }
 
 /*Pagination*/
@@ -1081,3 +1096,102 @@ border-radius: 3px;
   background-color: var(--hover-grey);
 }
 
+/*Modal form*/
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background-color: var(--basic-white);
+}
+
+.modal-login {
+  display: block;
+  top: 120px;
+  bottom: auto;
+  width: 760px; /*Вот тут вопросик. Я все страницы центрировала как по демкам - 960 пкс ширина, марджин: 0 ауто.
+  а тут блин по макету - ширина на которую центрируется что-то типа 1158 пкс, а вот уже модальное
+  окно - шириной те самые 960 пикселей. Мне по макетным величинам делать? Везде ширину центрирования
+  поменять на 1158 пикселей? Или соразмерно уменьшить модальное окно? Если я ставлю 960 пикселей ширину,
+  у меня неровно встают поля ввода.*/
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.4);
+  padding: 63px 100px; /*Тут тоже если по макету делать - получается гигантское окно. Хотя мб
+  это у меня - малюсенький экран? и ставить все размеры надо по макету?*/
+}
+
+.modal-header {
+  color: var(--basic-black);
+  text-transform: none;
+  font-weight: bold;
+  font-size: 45px;
+  line-height: 53px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.small-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-form p {
+  display: flex;
+  flex-direction: column;
+}
+
+.small-input {
+  box-sizing: border-box;
+  width: 360px;
+  padding: 16px;
+  font: inherit;
+  border: 2px solid #D7DCDE;
+  border-radius: 3px;
+}
+
+.large-input {
+  box-sizing: border-box;
+  width: 760px;
+  height: 118px;
+  padding-top: 16px;
+  padding-bottom: 84px;
+  padding-left: 16px;
+  font: inherit;
+  border: 2px solid #D7DCDE;
+  border-radius: 3px;
+}
+
+.login-form label {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 9px;
+}
+
+.login-form input {
+  color: var(--scale-grey);
+}
+
+.modal-close {
+  content: '';
+  background-image: url(../img/close-cross.svg);
+  background-color: transparent;
+  opacity: 0.3;
+  position: absolute;
+  top: 70px;
+  right: 89px;
+  width: 21px;
+  height: 21px;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  opacity: 1;
+}
