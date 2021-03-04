@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Roboto";
-  font-style: normal;
+  /* font-style: normal; */
   font-weight: 400;
   src: local("Roboto"),
        url("/fonts/roboto.woff2") format("woff2"),
@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: "Roboto";
-  font-style: bold;
+  /* font-style: bold; */
   font-weight: 700;
   src: local("Robotobold"),
        url("/fonts/robotobold.woff2") format("woff2"),
@@ -18,7 +18,7 @@
 
 @font-face {
   font-family: "Roboto";
-  font-style: medium;
+  /* font-style: medium; */
   font-weight: 500;
   src: local("Robotomedium"),
        url("/fonts/robotomedium.woff2") format("woff2"),
@@ -59,7 +59,7 @@ height: 100%;
 
 body {
 font-family: 'Roboto','Arial', sans-serif;
-font-style: normal;
+font-weight: normal;
 }
 
 ul {
@@ -79,6 +79,7 @@ img {
 .button {
   font-size: 16px;
   line-height: 18px;
+  font-weight: 500;
   text-transform: uppercase;
   width: 160px;
   height: 50px;;
@@ -117,7 +118,7 @@ img {
 }
 
 .header-center {
-  width: 980px;
+  width: 1160px;
   margin: 0 auto;
   padding: 0;
   display: flex;
@@ -137,6 +138,7 @@ img {
 .navigation {
   font-size: 16px;
   line-height: 30px;
+  font-weight: 500;
   color: var(--basic-black);
 }
 
@@ -179,12 +181,11 @@ img {
   position: relative;
 }
 
-
 .cart::before {
   position: absolute;
   top: 32px;
   right: 70px;
-  content: "";
+  content: '';
   width: 15px;
   height: 15px;
   background-image: url(../img/cart-icon.png);
@@ -195,38 +196,76 @@ img {
 /*Description*/
 
 .description-wrapper {
-  background: url(../img/nerds-ind-slider.png) top right no-repeat var(--background-grey);
+  background-color: var(--background-grey);
   min-height: 190px;
-  padding-bottom: 80px;
   margin-bottom: 80px;
-  } /*Нес понимаю, если я передвигаю слайдер-карент на 2 слайд, у меня изображение не растягивается
-  по враперу, а остается таким как у него размеры заданы*/
+  position: relative;
+  }
 
 .description {
-  width: 960px;
+  width: 1160px;
   margin: 0 auto;
   padding: 0;
-  display: flex;
 }
 
+.description-image {
+  width: 760px;
+  height: 431px;
+  object-fit: contain;
+}
+
+.description-slider {
+  position: absolute;
+  content: '';
+  bottom: 90px;
+  left: 630px;
+}
+
+.description-slider button::before {
+  position: absolute;
+  content: '';
+  bottom: 2px;
+  right: 2px;
+  width: 4px;
+  height: 4px;
+  background-color: var(--basic-white);
+  border: 3px solid var(--border-button-grey);
+  border-radius: 50%;
+}
+
+.description-slider button {
+    margin-right: 17px;
+    width: 18px;
+    height: 18px;
+    background-color: var(--basic-white);
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    position: relative;
+  }
+
+
 .description-list {
-  display: flex;
-  flex-direction: column;
-  max-width: 400px;
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
+.description-item {
+  display: flex;
+  justify-content: space-between;
+}
+
 .description-large {
   font-size: 55px;
   line-height: 55px;
+  font-weight: 500;
   color: var(--basic-black);
   margin-bottom: 25px;
 }
 .description-small {
   font-size: 16px;
   line-height: 24px;
+  font-weight: 400;
   color: var(--special-black);
   margin-bottom: 38px;
 }
@@ -236,6 +275,7 @@ img {
   padding: 15px 54px;
   font-size: 16px;
   line-height: 18px;
+  font-weight: 500;
   text-transform: uppercase;
   color: var(--basic-white);
   background-color: var(--basic-salmon);
@@ -255,46 +295,18 @@ box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
 color: rgba(255,255,255,0.3);
 }
 
-.slider-controls {
-display: flex;
-align-items: flex-end;
-}
-
-.slider-controls button {
-  margin: 17px;
-  width: 18px;
-  height: 18px;
-  background-color: var(--basic-white);
-  border: 2px solid #ffffff;
-  border-radius: 50%;
-}
-
-.slider-controls .current {
-  border: 2px solid var(--border-button-grey);
-} /*Не знаю как тут отрисовать все кружочки, как только начинаю вводить позиционирование или паддинги
-все нахрен ломается*/
-
 .slide {
 display: none;
 }
 
 .slide-current {
-  display: block;
+  display: flex;
 }
-/*А это я пытаюсь на белом кружке нарисовать белый кружок с серой границей, чтобы типа выделенный
-кружок, как у активного инпута. Но как ты понимаешь, ничего не вышло))
-.slider-controls .current {
-  width: 8px;
-  height: 8px;
-  background-color: var(--basic-white);
-  border: 2px solid var(--basic-grey);
-}
-}*/
 
 /*Features*/
 
 .index-column {
-  width:960px;
+  width:1160px;
   margin: 0 auto;
 }
 
@@ -316,6 +328,10 @@ display: none;
   flex-basis: 300px;
 }
 
+.features-item img {
+  margin-bottom: 25px;
+}
+
 .app {
   padding-right: 100px;
   padding-left: 100px;
@@ -324,12 +340,14 @@ display: none;
 .features-item h2 {
   font-size: 24px;
   line-height: 30px;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
 .features-item p {
   font-size: 16px;
   line-height: 24px;
+  font-weight: 400;
 }
 
 .button-website:focus,
@@ -367,10 +385,6 @@ background-color: var(--hover-green);
 
 /*Work*/
 
-/*И на этом --всё, что я имею сказать этой части разметки, потому что я НЕ ПОНИМАЮ  ПОЧЕМУ я соблюла все
-отступы по макету и тд и тп и у меня не выходит 100% совпадание и уровень текстов разнится)))
-я психом стану с этими выравнимваниями)))*/
-
 .work-columns {
   display: flex;
   margin-bottom: 73px;
@@ -379,59 +393,75 @@ background-color: var(--hover-green);
 .work {
   font-size: 16px;
   line-height: 24px;
+  font-weight: 400;
   color: var(--special-black);
+  min-width: 651px;
 }
 
 .work-large {
   font-size: 45px;
   line-height: 45px;
+  font-weight: 500;
   color: var(--basic-black);
 }
 
 .work h3 {
   font-size: 16px;
   line-height: 24px;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 32px;
+  margin-bottom: 23px;
 }
 
 .work-small {
   margin-bottom: 40px;
 }
 
-.work h3 {
-  margin-bottom: 23px;
+.work-item {
+  position: relative;
+}
+
+.work-item::before {
+position: absolute;
+content: '';
+top: 10px;
+left: -32px;
+width: 25px;
+height: 2px;
+background-color: var(--basic-salmon);
 }
 
 .workstyle {
-  justify-content: flex-end;
-  /*min-height: 356px; Задать минимальную высоту равную высоте соседнего флекса не дало
-  видимый результат*/
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .workstyle-box {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .workstyle-image {
   background-color: var(--background-grey);
-  margin-bottom: 37px;
+  margin-bottom: 25px;
 }
 
 .workstyle-paragraph {
   font-size: 16px;
   line-height: 24px;
-  font-weight: bold;
-  margin-bottom: 31px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--basic-black);
 }
 
 .percent-list {
   list-style: none;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
 }
 
 .percent-item {
@@ -439,17 +469,11 @@ background-color: var(--hover-green);
  margin-right: 22px;
 }
 
-.workstyle p {
-  font-weight: bold;
-  text-transform: uppercase;
-  color: var(--basic-black);
-}
-
 .workstyle-numbers {
   list-style: none;
   font-size: 45px;
   line-height: 64px;
-  font-weight: bold;
+  font-weight: 700;
   color: var(--basic-black);
   margin: 0;
   padding: 0;
@@ -459,22 +483,27 @@ background-color: var(--hover-green);
   list-style: none;
   font-size: 16px;
   line-height: 18px;
+  font-weight: 400;
   color: var(--special-black);
   margin: 0;
   padding: 0;
 }
 
-
 /*Partners*/
 
 .partners-list {
-  background:
-   url(../img/index-line.png) repeat-x top center,
-   url(../img/index-line.png) repeat-x bottom center;
+  background-image:
+  url(../img/index-line.png),
+  url(../img/index-line.png),
+  url(../img/index-vertical-line.png),
+  url(../img/index-vertical-line.png),
+  url(../img/index-vertical-line.png);
+  background-position: top, bottom, 25%, 50%, 75%;
+  background-repeat: no-repeat;
   padding: 66px 0;
   list-style: none;
   text-align: center;
-  width:960px;
+  width: 1160px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -483,6 +512,7 @@ background-color: var(--hover-green);
 
 .partners-item {
   opacity: 0.2;
+  position: relative;
 }
 
 .partners-item:hover,
@@ -498,6 +528,7 @@ background-color: var(--hover-green);
 
 .footer-contacts {
   background-image: url(../img/map.png);
+  background-size: cover;
   height: 416px;
   margin-bottom: 75px;
 }
@@ -510,16 +541,14 @@ background-color: var(--hover-green);
   width: 319px;
   background-color: var(--basic-white);
   height: 308px;
-}
-
-.padding-container {
   padding: 50px;
+  box-sizing: border-box;
 }
 
 .footer-contacts h3 {
   font-size: 18px;
   line-height: 30px;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
   color: var(--basic-black);
 }
@@ -528,6 +557,7 @@ background-color: var(--hover-green);
 .footer-contacts a {
   font-size: 16px;
   line-height: 18px;
+  font-weight: 400;
   color: var(--footer-contacts)
 }
 
@@ -540,14 +570,14 @@ background-color: var(--hover-green);
   text-decoration: none;
   font-size: 16px;
   line-height: 18px;
+  font-weight: 400;
   color: var(--footer-contacts)
 }
-
 
 /*Footer-promo*/
 
 .footer-container {
-  width: 960px;
+  width: 1160px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -605,7 +635,7 @@ background-color: var(--hover-green);
 
 
 .promo-large {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 36px;
   line-height: 36px;
   color: var(--basic-black);
@@ -627,6 +657,7 @@ background-color: var(--hover-green);
 .catalog-header {
   font-size: 55px;
   line-height: 55px;
+  font-weight: 400;
   text-align: center;
   width: 960px;
   margin: 0 auto;
@@ -639,10 +670,10 @@ background-color: var(--hover-green);
 }
 
 .shop {
-font-weight: 500;
+font-weight: 400;
 font-size: 55px;
 text-align: center;
-width: 960px;
+width: 1160px;
 margin: 0 auto;
 padding-top: 72px;
 }
@@ -652,20 +683,10 @@ padding-top: 72px;
   grid-template-columns: min-content 1fr;
 }
 
-/*И вот тут я не поняла вообще ничего. В демке был какой-то хак про выравнивание. Примерно такой:
-в фигме высота элемента есть, но добавляя бар на 2 пикселя шириной, и если мы хотим его выровнять
-посередине, мы должны из высоты элемента вычесть 2 пикселя высоты бара и поделить на 2. Тадам:
-элемент оказывается нихрена не посередине, потому что "Так как внутренние отступы учитываются
-в размер объекта, уменьшим высоту объекта на размер верхнего внутреннего отступа." ШТА?!?!?
-Ничего не поняла, что за скрытый бонус паддинга, но теперь вообще неясно, откуда мне
-высоту элементов брать или как ее высчитывать, чтобы было правильно. Раз уж в Фигме все неправильно.
-Пишу этот коммент тут потому что на странице каталога огромный элемент получается по высоте (шапка+заголовок)
-и я не понимаю - это так надо или это я так скрытые бонусы от паддингов не пересчитала.*/
-
-
 .filter-item legend {
   font-size: 18px;
   line-height: 30px;
+  font-weight: 700;
   text-transform: uppercase;
   font-weight: 700;
   padding: 0;
@@ -740,6 +761,8 @@ padding-top: 72px;
   text-transform: uppercase;
   color: var(--special-black);
   font-size: 16px;
+  line-height: 22px;
+  font-weight: 500;
 }
 
 .price-controls input {
@@ -770,14 +793,17 @@ padding-top: 72px;
 
 .filter-header {
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 18px;
+  line-height: 30px;
   color: var(--basic-black);
   margin-bottom: 14px;
 }
 
 .filter ul {
+  font-size: 16px;
   line-height: 20px;
+  font-weight: 400;
   padding: 0;
   margin: 0;
 }
@@ -790,6 +816,8 @@ padding-top: 72px;
 .filter-button {
   width: 260px;
   font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
   color: #000000;
   background-color: var(--background-grey);
 }
@@ -868,11 +896,6 @@ label:focus::before {
   opacity: 0.4;
 }
 
-/*Тут я потерялась. Эта галочка рассекает границу, я лично на ЦСС такое не реализую, значит,
-предполагаю, что надо скачать картинку? как в демке? Скачала, но получается полная херня
-хотя якобы картинка по размерам должна совпадать полностью с моими прямоугольниками. Ну,
-так говорит Фигма. В общем так бодро вышло с радиокнопками и так никак - с чекбоксом.*/
-
 .filter-checkbox-input:checked + label::before {
   content: "";
   position: absolute;
@@ -891,11 +914,11 @@ label:focus::before {
   opacity: 1;
 }
 
-
 /*Clients*/
 
 h2 {
   font-size: 18px;
+  line-height: 30px;
   text-transform: uppercase;
   font-weight: 700;
   padding: 0;
@@ -903,7 +926,7 @@ h2 {
 }
 
 .page-catalog {
-  width: 960px;
+  width: 1160px;
   margin: 0 auto;
   padding: 0;
 }
@@ -937,6 +960,7 @@ h2 {
 .catalog-sorting-item a {
   font-size: 14px;
   line-height: 18px;
+  font-weight: 400;
   text-decoration: none;
   text-transform: uppercase;
   color: var(--basic-black);
@@ -971,7 +995,6 @@ h2 {
 /*Clients*/
 
 .clients-list {
-  width: 960;
   list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1019,7 +1042,7 @@ h2 {
 
 .clients-header {
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 18px;
   line-height: 30px;
   color: var(--basic-black);
@@ -1029,6 +1052,7 @@ h2 {
 .clients-text {
   font-size: 16px;
   line-height: 18px;
+  font-weight: 400;
   color: var(--footer-contacts);
   text-align: center;
 }
@@ -1089,8 +1113,6 @@ border-radius: 3px;
   text-align: center;
 }
 
-
-
 .pagination-item:hover,
 .pagination-item:focus {
   background-color: var(--hover-grey);
@@ -1109,24 +1131,28 @@ border-radius: 3px;
   background-color: var(--basic-white);
 }
 
+/* Писать ли модал-логин хайт по Фигме? */
+
 .modal-login {
-  display: block;
-  top: 120px;
+  display: none;
+  top: 500px;
   bottom: auto;
-  width: 760px; /*Вот тут вопросик. Я все страницы центрировала как по демкам - 960 пкс ширина, марджин: 0 ауто.
-  а тут блин по макету - ширина на которую центрируется что-то типа 1158 пкс, а вот уже модальное
-  окно - шириной те самые 960 пикселей. Мне по макетным величинам делать? Везде ширину центрирования
-  поменять на 1158 пикселей? Или соразмерно уменьшить модальное окно? Если я ставлю 960 пикселей ширину,
-  у меня неровно встают поля ввода.*/
+  width: 960px;
   box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.4);
-  padding: 63px 100px; /*Тут тоже если по макету делать - получается гигантское окно. Хотя мб
-  это у меня - малюсенький экран? и ставить все размеры надо по макету?*/
+  padding: 63px 100px;
+  box-sizing: border-box;
+}
+
+.modal-wraper {
+  width: 760px;
+  margin: 0 auto;
+  position: relative;
 }
 
 .modal-header {
   color: var(--basic-black);
   text-transform: none;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 45px;
   line-height: 53px;
 }
@@ -1168,7 +1194,7 @@ border-radius: 3px;
 }
 
 .login-form label {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 16px;
   line-height: 18px;
   margin-bottom: 9px;
@@ -1184,8 +1210,8 @@ border-radius: 3px;
   background-color: transparent;
   opacity: 0.3;
   position: absolute;
-  top: 70px;
-  right: 89px;
+  top: 0;
+  right: 0;
   width: 21px;
   height: 21px;
   border: none;
