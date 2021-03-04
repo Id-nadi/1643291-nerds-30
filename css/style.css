@@ -172,19 +172,16 @@ img {
   opacity: 0.3;
 }
 
-.user-navigation {
-  max-width: 100px;
-}
-
 .user-navigation .cart {
   padding-left: 50px;
+  padding-right: 0;
   position: relative;
 }
 
 .cart::before {
   position: absolute;
   top: 32px;
-  right: 70px;
+  left: 0;
   content: '';
   width: 15px;
   height: 15px;
@@ -202,12 +199,6 @@ img {
   position: relative;
   }
 
-.description {
-  width: 1160px;
-  margin: 0 auto;
-  padding: 0;
-}
-
 .description-image {
   width: 760px;
   height: 431px;
@@ -215,13 +206,25 @@ img {
 }
 
 .description-slider {
+  display: flex;
   position: absolute;
   content: '';
-  bottom: 90px;
-  left: 630px;
+  bottom: 100px;
+  left: 50%;
+  transform: translateY(-50%);
 }
 
-.description-slider button::before {
+.description-slider button {
+  margin-right: 17px;
+  width: 18px;
+  height: 18px;
+  background-color: var(--basic-white);
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  position: relative;
+}
+
+.description-slider .current::before {
   position: absolute;
   content: '';
   bottom: 2px;
@@ -233,20 +236,10 @@ img {
   border-radius: 50%;
 }
 
-.description-slider button {
-    margin-right: 17px;
-    width: 18px;
-    height: 18px;
-    background-color: var(--basic-white);
-    border: 2px solid #ffffff;
-    border-radius: 50%;
-    position: relative;
-  }
-
-
 .description-list {
+  width: 1160px;
+  margin: 0 auto;
   padding: 0;
-  margin: 0;
   list-style: none;
 }
 
@@ -681,6 +674,7 @@ padding-top: 72px;
 .page-catalog {
   display: grid;
   grid-template-columns: min-content 1fr;
+  gap: 140px;
 }
 
 .filter-item legend {
@@ -893,6 +887,7 @@ label:focus::before {
   height: 23px;
   border: 2px solid var(--filter-input-grey);
   border-radius: 3px;
+  box-sizing: border-box;
   opacity: 0.4;
 }
 
@@ -902,7 +897,7 @@ label:focus::before {
   left: -36;
   top: -4px;
   border: none;
-  width: 25px;
+  width: 27px;
   height: 23px;
   background-image: url(../img/checkbox-on.png);
   background-repeat: no-repeat;
@@ -935,7 +930,6 @@ h2 {
   margin: 0 auto;
   margin-bottom: 56px;
   padding: 0;
-  padding-left: 41px;
   display: flex;
   justify-content: space-between;
 }
@@ -952,7 +946,7 @@ h2 {
 }
 
 .catalog-sorting-item {
-  margin-left: 25px;
+  margin-right: 25px;
   opacity: 0.3;
   justify-content: flex-end;
 }
@@ -1000,6 +994,8 @@ h2 {
   grid-template-columns: 1fr 1fr;
   column-gap: 40px;
   row-gap: 30px;
+  padding: 0;
+  margin: 0;
 }
 
 .clients-info {
@@ -1077,6 +1073,9 @@ h2 {
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
+  box-sizing: border-box;
+  min-width: 50px;
+  height: 50px;
 }
 
 .pagination-item {
@@ -1087,14 +1086,13 @@ h2 {
 .pagination-item a:focus {
 background-color: var(--hover-grey);
 border-radius: 3px;
-} /*Не понимаю, почему при наведении элемент увеличивается вниз и граница перестает быть
-скругленной.*/
+}
 
 .pagination-item a:active {
 opacity: 0.3;
 box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
 border-radius: 3px;
-} /*А тут не понимаю, почему активный элемент больше на неск пикселей вниз, чем неактивные*/
+}
 
 .pagination-item-current a {
   background-color: var(--basic-white);
@@ -1104,7 +1102,7 @@ border-radius: 3px;
 }
 
 .previous {
-  width: 260px;
+  min-width: 260px;
   display: none
 }
 
