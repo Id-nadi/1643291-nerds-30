@@ -51,6 +51,7 @@
   --social-button-grey: #E1E1E1;
   --scale-grey: #D7DCDF;
   --filter-input-grey: #4D4D4D;
+  --border-active-grey: #B4B9BB;
 }
 
 .page {
@@ -142,6 +143,11 @@ img {
   line-height: 30px;
   font-weight: 500;
   color: var(--basic-black);
+  position: relative;
+}
+
+.user-navigation {
+  position: relative;
 }
 
 .header-list {
@@ -172,6 +178,25 @@ img {
 .user-navigation a:active {
   color: var(--basic-black);
   opacity: 0.3;
+}
+
+.navigation::before a:active,
+.user-navigation::before a:active {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  width: 61px;
+  height: 2px;
+  background-color: var(--basic-salmon);
+}
+
+.header-item::before .current {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  width: 73px;
+  height: 2px;
+  background-color: var(--basic-salmon);
 }
 
 .user-navigation .cart {
@@ -851,15 +876,14 @@ img {
 .filter-button:hover,
 .filter-button:focus {
   background-color: var(--hover-grey);
+  border: none;
 }
 
 .filter-button:active {
   opacity: 0.3;
   box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
+  border: none;
 }
-
-/*Не понимаю, почему она себя так ведет. У нее состояние нажатия одинаково с нажатием у пагинации.
-у пагинации все отлично выходит по макету, а тут херня. При идентичном коде.*/
 
 .filter-radio-item label {
   position: relative;
@@ -881,8 +905,13 @@ img {
   opacity: 0.4;
 }
 
+.filter-radio-input+label::after  {
+  display: none;
+}
+
 .filter-radio-input:checked+label::after {
   content: "";
+  display: block;
   position: absolute;
   left: -28px;
   top: 4px;
@@ -896,6 +925,14 @@ img {
 label:hover::before,
 label:focus::before {
   opacity: 1;
+}
+
+label:disabled {
+  opacity: 0.3;
+}
+
+label:disabled::before {
+  opacity: 0.1;
 }
 
 .filter-radio-input:checked+label:hover::after,
@@ -919,9 +956,9 @@ label:focus::before {
   top: -4px;
   width: 25px;
   height: 23px;
-  border: 2px solid var(--filter-input-grey);
-  border-radius: 3px;
-  box-sizing: border-box;
+  background-image: url(../img/checkbox-off.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
   opacity: 0.4;
 }
 
@@ -933,7 +970,7 @@ label:focus::before {
   border: none;
   width: 27px;
   height: 23px;
-  background-image: url(../img/checkbox-on.png);
+  background-image: url(../img/checkbox-on.svg);
   background-repeat: no-repeat;
   background-position: 0 0;
 }
@@ -941,6 +978,14 @@ label:focus::before {
 label:hover::before,
 label:focus::before {
   opacity: 1;
+}
+
+label:disabled {
+  opacity: 0.3;
+}
+
+label:disabled::before {
+  opacity: 0.1;
 }
 
 /*Clients*/
@@ -999,6 +1044,10 @@ h2 {
   opacity: 0.6;
 }
 
+.catalog-sorting-item:active {
+  opacity: 1;
+}
+
 .arrows-list {
   display: flex;
   flex-wrap: wrap;
@@ -1015,6 +1064,10 @@ h2 {
 .arrows-item:hover,
 .arrows-item:focus {
   opacity: 0.6;
+}
+
+.arrows-item:active {
+  opacity: 1;
 }
 
 .rotate {
@@ -1044,12 +1097,7 @@ h2 {
   box-sizing: border-box;
 }
 
-.sedona,
-.pink,
-.mishka,
-.aplus,
-.borodinski,
-.kvast  {
+.clients-info {
   display: none;
 }
 
@@ -1058,7 +1106,7 @@ h2 {
   cursor: pointer;
 }
 
-.clients-item:hover > .sedona {
+.clients-item:hover .clients-info {
   display: flex;
   position: absolute;
   bottom: 0;
@@ -1213,7 +1261,7 @@ h2 {
 /* Писать ли модал-логин хайт по Фигме? */
 
 .modal-login {
-  display: none;
+  display: flex;
   top: 500px;
   bottom: auto;
   width: 960px;
@@ -1258,6 +1306,10 @@ h2 {
   font: inherit;
   border: 2px solid #D7DCDE;
   border-radius: 3px;
+}
+
+.small-input:hover {
+  border-color: var(--border-active-grey);
 }
 
 .large-input {
