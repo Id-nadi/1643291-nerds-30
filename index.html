@@ -28,7 +28,7 @@
           </nav>
         </div>
         <div class='user-navigation'>
-          <a class='cart circle' href='#'>Корзина</a>
+          <a class='cart' href='#'>Корзина</a>
         </div>
       </div>
     </div>
@@ -37,15 +37,15 @@
     <h1 class='page-header'>Дизайн-студия &#34;Nerds&#34;</h1>
     <div class='description-wrapper'>
       <div class='description-slider'>
-        <button type='button' aria-label='Первый слайд'></button>
-        <button class='current' type='button' aria-label='Второй слайд'></button>
+        <button class='current' type='button' aria-label='Первый слайд'></button>
+        <button type='button' aria-label='Второй слайд'></button>
         <button type='button' aria-label='Третий слайд'></button>
       </div>
       <ul class='description-list'>
-        <li class='description-item slide slider1'>
+        <li class='description-item slide slider1 slide-current'>
           <div class='description-text'>
             <p class='description-large'>Долго, дорого, <br>
-              скурпулезно.
+              скрупулезно.
             </p>
             <p class='description-small'>Математически выверенный дизайн
               <br> для вашего сайта или мобильного приложения.
@@ -65,7 +65,7 @@
             <a class='description-button' href="#">Узнать больше</a>
           </div>
         </li>
-        <li class='description-item slide slider3 slide-current'>
+        <li class='description-item slide slider3'>
           <div class='description-text'>
             <p class='description-large'>Только ночь, <br>
               только хардкор
@@ -76,7 +76,6 @@
           </div>
         </li>
       </ul>
-    </div>
     </div>
     <h2 class='visually-hidden'>Наши предложения</h2>
     <div class='index-column'>
@@ -92,13 +91,15 @@
           <li class='app features-item'>
             <img src='img/iphone-index.png' width='300' height='146' alt='Красивый Айфон'>
             <h2>приложения</h2>
-            <p>Покорите топ-10 приложений в AppStore и Google Play</p>
+            <p>Покорите топ-10 приложений <br>
+              в AppStore и Google Play</p>
             <button class='button button-app' type='button' name='button'>Заказать</button>
           </li>
           <li class='presentation features-item'>
             <img src='img/presentation-index.png' width='300' height='146' alt='Презентация на компьютере'>
             <h2>презентации</h2>
-            <p>Вы даже не подозреваете, насколько вы изумительны!</p>
+            <p>Вы даже не подозреваете, <br>
+              насколько вы изумительны!</p>
             <button class='button button-presentation' type='button' name='button'>Заказать</button>
           </li>
         </ul>
@@ -106,14 +107,14 @@
       <h3 class='visually-hidden'>О нас</h3>
       <div class='work-columns'>
         <section class='work'>
-          <p class='work-large'>Мы - маленькая, но гордая <br>
+          <p class='work-large'>Мы &mdash; маленькая, но гордая <br>
             дизайн-студия из Краснодара.</p>
           <p class='work-small'>Исповедуем принципы минимализма и чистоты. Ставим математический расчет <br>
-            превыше креатива.Работаем не покладая рук, как роботы.</p>
+            превыше креатива. Работаем не покладая рук, как роботы.</p>
           <h3>выполняем заказы на разработку:</h3>
           <ul class='work-list'>
             <li class='work-item'>Веб-сайтов любой сложности</li>
-            <li class='work-item'>Мобильных приложений для iOS и Andriod</li>
+            <li class='work-item'>Мобильных приложений для iOS и Android</li>
             <li class='work-item'>Слайдшоу и видео для корпоративных презентаций</li>
           </ul>
         </section>
@@ -121,7 +122,6 @@
           <div class='workstyle-box'>
             <p class='workstyle-paragraph'>С 2004 года любим точность во всем:</p>
           </div>
-          <div class='percent-box'>
             <ul class='percent-list'>
               <li class='percent-item'>
                 <p class='workstyle-numbers'> 146<sup>%</sup></p>
@@ -139,27 +139,26 @@
           </div>
         </div>
       </div>
-    </div>
     <section class='partners'>
       <ul class='partners-list'>
         <li class='partners-item'>
           <a href='https://htmlacademy.ru/intensive/htmlcss'>
-            <img src='img/htmlacad-logo.png' alt='Логотип HTML Academy'>
+            <img class='htmlacademy-partner'  src='img/htmlacad-logo.png' alt='Логотип HTML Academy'>
           </a>
         </li>
         <li class='partners-item'>
           <a href="#">
-            <img src='img/borodinski-logo.png' alt='Логотип Барбершоп Бородинский'>
+            <img class='borodinski-partner' src='img/borodinski-logo.png' alt='Логотип Барбершоп Бородинский'>
           </a>
         </li>
         <li class='partners-item'>
           <a href="#">
-            <img src='img/pink-logo.png' alt='Логотип Пинк'>
+            <img class='pink-partner' src='img/pink-logo.png' alt='Логотип Пинк'>
           </a>
         </li>
         <li class='partners-item'>
           <a href="#">
-            <img src='img/mishka-logo.png' alt='Логотип Мишка'>
+            <img class='mishka-partner' src='img/mishka-logo.png' alt='Логотип Мишка'>
           </a>
         </li>
       </ul>
@@ -171,17 +170,18 @@
         <div class='contacts-container'>
           <div class='padding-container'>
             <h3>nёrds design studio</h3>
-            <p>191186, Санкт-Петербург, <br>
+            <p class='address'>191186, Санкт-Петербург, <br>
               ул. Б. Конюшенная, д. 19/8
             </p>
-            <p>
-              тел.: <a class='contact-phone' href='tel:+78122757575'>+7 (812) 275-75-75</a>
+            <p class='contact-phone'>
+              тел.: <a href='tel:+78122757575'>+7 (812) 275-75-75</a>
             </p>
-            <button class='button'>Напишите нам</button>
+            <div class='contact-button'>
+              <a class='button' href="#">Напишите нам</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
     <div class='footer-container'>
       <div class='footer-social'>
@@ -238,7 +238,7 @@
           <label for='user-message'>Текст письма:</label>
           <input class='large-input' type='text' id='user-message' name='message' placeholder='В свободной форме'>
         </p>
-        <button class="button" type="submit">Отправить</button>
+        <button class='button modal-button' type='submit'>Отправить</button>
       </form>
       <button class="modal-close" type="button" aria-label="Закрыть"></button>
     </div>
