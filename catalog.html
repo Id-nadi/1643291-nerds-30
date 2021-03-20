@@ -4,7 +4,7 @@
     <meta charset='utf-8'>
     <title>HTML Academy: Нёрдс</title>
     <link rel='stylesheet' href='css/normalize.css'>
-    <link rel='stylesheet' href='css/style.css'>
+    <link rel='stylesheet' href='css/style.min.css'>
     <link rel='icon' href='favicon.ico'>
     <link rel='icon' href='img/nerdsletter.svg' type='image/svg+xml'>
     <link rel='apple-touch-icon' href='img/nerdsletter.png'>
@@ -22,7 +22,6 @@
            <li  class='header-item'><a href='#'>Клиенты</a></li>
            <li  class='header-item current'><a href='catalog.html'>Магазин</a></li>
            <li  class='header-item'><a href='#'>Контакты </a></li>
-           </ul>
        </nav>
       </div>
       <div class='user-navigation'>
@@ -45,8 +44,8 @@
               <div class='scale'>
                 <div class='bar'></div>
               </div>
-              <div class='toggle toggle-min' tabindex='0'></div>
-              <div class='toggle toggle-max' tabindex='0'></div>
+              <div class='toggle toggle-min' tabindex='0' aria-label='Минимальная цена'></div>
+              <div class='toggle toggle-max' tabindex='0' aria-label='Максимальная цена'></div>
             </div>
             <div class='price-controls'>
               <label class='min-price'>
@@ -81,7 +80,7 @@
             <legend class='filter-header'>особенности:</legend>
             <ul class='filter-checkbox'>
              <li class='filter-checkbox-item'>
-               <input class='visually-hidden filter-checkbox-input' type='checkbox' name='slider' id='filter-checkbox-slider' checked>
+               <input class='visually-hidden filter-checkbox-input' type='checkbox' name='slider' id='filter-checkbox-slider' checked disabled>
                <label for='filter-checkbox-slider'>Слайдер</label>
               </li>
               <li class='filter-checkbox-item'>
@@ -89,7 +88,7 @@
                <label for='filter-checkbox-advantages'>Блок преимуществ</label>
               </li>
               <li class='filter-checkbox-item'>
-               <input class='visually-hidden filter-checkbox-input' type='checkbox' name='news' id='filter-checkbox-news' checked>
+               <input class='visually-hidden filter-checkbox-input' type='checkbox' name='news' id='filter-checkbox-news' checked disabled>
                <label for='filter-checkbox-news'>Новости</label>
               </li>
               <li class='filter-checkbox-item'>
@@ -122,10 +121,10 @@
           </ul>
           <ul class='arrows-list'>
             <li class='arrows-item'>
-              <a href="#"><img src="img/arrow-down.png" alt="Стрелочка вверх"></a>
+              <a href='#'><img src='img/arrow-down.png' alt='Стрелочка вверх' width='11px' height='10px' aria-label='Сортировка увеличить'></a>
             </li>
             <li class='arrows-item'>
-              <a href="#"><img class='rotate' src="img/arrow-down.png" alt="Стрелочка вниз"></a>
+              <a href='#'><img class='rotate' src='img/arrow-down.png' alt='Стрелочка вниз'  width='11px' height='10px' aria-label='Сортировка уменьшить'></a>
             </li>
           </ul>
         </div>
@@ -228,7 +227,6 @@
   <div class='footer-contacts'>
     <div class='contacts-center'>
       <div class='contacts-container'>
-        <div class='padding-container'>
           <h3>nёrds design studio</h3>
           <p class='address'>191186, Санкт-Петербург, <br>
             ул. Б. Конюшенная, д. 19/8
@@ -237,7 +235,7 @@
             тел.: <a href='tel:+78122757575'>+7 (812) 275-75-75</a>
           </p>
           <div class='contact-button'>
-            <a class='button' href="#">Напишите нам</a>
+            <a class='button write-us-button' href="#">Напишите нам</a>
           </div>
         </div>
       </div>
@@ -280,5 +278,29 @@
     </div>
   </div>
 </footer>
+<section class='modal modal-login'>
+  <div class='modal-wraper'>
+    <h2 class='modal-header'>Напишите нам</h2>
+    <form class='login-form' action='https://echo.htmlacademy.ru' method='post'>
+      <div class='small-wrap'>
+        <p>
+          <label for='user-name'>Ваше имя:</label>
+          <input class='small-input user-name-input' type='text' id='user-name' name='user' placeholder='Имя Фамилия'>
+        </p>
+        <p>
+          <label for='user-mail'>Ваш email:</label>
+          <input class='small-input user-email' type='email' id='user-mail' name='e-mail' placeholder='email@example.com'>
+        </p>
+      </div>
+      <p>
+        <label for='user-message'>Текст письма:</label>
+        <input class='large-input' type='text' id='user-message' name='message' placeholder='В свободной форме'>
+      </p>
+      <button class='button modal-button' type='submit'>Отправить</button>
+    </form>
+    <button class="modal-close" type="button" aria-label="Закрыть"></button>
+  </div>
+</section>
+<script src='js/write-us-form.min.js'></script>
   </body>
 </html>

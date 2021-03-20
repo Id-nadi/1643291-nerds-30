@@ -5,7 +5,7 @@
   <meta charset='utf-8'>
   <title>HTML Academy: Нёрдс</title>
   <link rel='stylesheet' href='css/normalize.css'>
-  <link rel='stylesheet' href='css/style.css'>
+  <link rel='stylesheet' href='css/style.min.css'>
   <link rel='icon' href='favicon.ico'>
   <link rel='icon' href='img/nerdsletter.svg' type='image/svg+xml'>
   <link rel='apple-touch-icon' href='img/nerdsletter.png'>
@@ -143,22 +143,22 @@
       <ul class='partners-list'>
         <li class='partners-item'>
           <a href='https://htmlacademy.ru/intensive/htmlcss'>
-            <img class='htmlacademy-partner'  src='img/htmlacad-logo.png' alt='Логотип HTML Academy'>
+            <img class='htmlacademy-partner'  src='img/htmlacad-logo.png' alt='Логотип HTML Academy'  width='199px' height='68px'>
           </a>
         </li>
         <li class='partners-item'>
           <a href="#">
-            <img class='borodinski-partner' src='img/borodinski-logo.png' alt='Логотип Барбершоп Бородинский'>
+            <img class='borodinski-partner' src='img/borodinski-logo.png' alt='Логотип Барбершоп Бородинский'  width='209px' height='90px'>
           </a>
         </li>
         <li class='partners-item'>
           <a href="#">
-            <img class='pink-partner' src='img/pink-logo.png' alt='Логотип Пинк'>
+            <img class='pink-partner' src='img/pink-logo.png' alt='Логотип Пинк'  width='195px' height='52px'>
           </a>
         </li>
         <li class='partners-item'>
           <a href="#">
-            <img class='mishka-partner' src='img/mishka-logo.png' alt='Логотип Мишка'>
+            <img class='mishka-partner' src='img/mishka-logo.png' alt='Логотип Мишка'  width='173px' height='184px'>
           </a>
         </li>
       </ul>
@@ -168,7 +168,6 @@
     <div class='footer-contacts'>
       <div class='contacts-center'>
         <div class='contacts-container'>
-          <div class='padding-container'>
             <h3>nёrds design studio</h3>
             <p class='address'>191186, Санкт-Петербург, <br>
               ул. Б. Конюшенная, д. 19/8
@@ -177,7 +176,7 @@
               тел.: <a href='tel:+78122757575'>+7 (812) 275-75-75</a>
             </p>
             <div class='contact-button'>
-              <a class='button' href="#">Напишите нам</a>
+              <a class='button write-us-button' href="#">Напишите нам</a>
             </div>
           </div>
         </div>
@@ -227,11 +226,11 @@
         <div class='small-wrap'>
           <p>
             <label for='user-name'>Ваше имя:</label>
-            <input class='small-input' type='text' id='user-name' name='user' placeholder='Имя Фамилия'>
+            <input class='small-input user-name-input' type='text' id='user-name' name='user' placeholder='Имя Фамилия'>
           </p>
           <p>
             <label for='user-mail'>Ваш email:</label>
-            <input class='small-input' type='email' id='user-mail' name='e-mail' placeholder='email@example.com'>
+            <input class='small-input user-email' type='email' id='user-mail' name='e-mail' placeholder='email@example.com'>
           </p>
         </div>
         <p>
@@ -243,6 +242,7 @@
       <button class="modal-close" type="button" aria-label="Закрыть"></button>
     </div>
   </section>
+  <script src='js/write-us-form.min.js'></script>
 </body>
 </html>
 
